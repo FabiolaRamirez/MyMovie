@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Side Menu Table View Controller-->
+        <scene sceneID="4k7-x5-zsY">
+            <objects>
+                <viewController storyboardIdentifier="sideMenuTableViewController" id="q3o-Pw-DNs" customClass="SideMenuTableViewController" customModule="MyMovieDB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kES-Rq-ACt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="DMU-3d-u97">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menuCellIdentifier" id="ZOy-rm-K5Y">
+                                        <rect key="frame" x="0.0" y="55.333333333333343" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZOy-rm-K5Y" id="1Mb-2o-JSz">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="q3o-Pw-DNs" id="Hhd-vu-axo"/>
+                                    <outlet property="delegate" destination="q3o-Pw-DNs" id="hm5-bq-xAh"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DMU-3d-u97" firstAttribute="top" secondItem="kES-Rq-ACt" secondAttribute="top" id="391-Ky-ATy"/>
+                            <constraint firstItem="DMU-3d-u97" firstAttribute="leading" secondItem="Krl-wt-dr5" secondAttribute="leading" id="Brt-m8-tpa"/>
+                            <constraint firstItem="DMU-3d-u97" firstAttribute="trailing" secondItem="Krl-wt-dr5" secondAttribute="trailing" id="T7x-3h-Ggo"/>
+                            <constraint firstItem="DMU-3d-u97" firstAttribute="bottom" secondItem="Krl-wt-dr5" secondAttribute="bottom" id="eCr-mZ-7nA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Krl-wt-dr5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="e2p-4w-1fC"/>
+                    <connections>
+                        <outlet property="tableView" destination="DMU-3d-u97" id="Hte-Vl-JlW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SxC-iI-y4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="965.21739130434787" y="183.42391304347828"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="kPk-fM-UrY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CBm-EV-sY1" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="abd-c6-4zC">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="q3o-Pw-DNs" kind="relationship" relationship="rootViewController" id="DQQ-rP-MCG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DHl-FN-kWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57.971014492753625" y="183.42391304347828"/>
+        </scene>
+    </scenes>
+</document>

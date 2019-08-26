@@ -1,0 +1,40 @@
+/* 
+  Localizable.strings
+  MyMovieDB
+
+  Created by Fabiola Ramirez on 7/25/19.
+  Copyright © 2019 com.fabiolaramirez. All rights reserved.
+*/
+
+
+//Alerts
+"Ok";
+"ErrorMessage" = "Opps, something went wrong. Please try again later.";
+"ErrorLogoutMessage" = "Unable to log out. Please try again later.";
+"FillEmailFieldMessage" = "Please enter your email";
+"FillPasswordFieldMessage" = "Please enter your password";
+"Yes";
+"LogOutMessage" = "Are you sure you want log out?";
+"Cancel";
+"Save";
+"Please, Enter at least one favorite movie!";
+"ErrorMovieDetail" = "Sorry, no more information of this movie";
+"SaveMessage" = "Are you sure you want to save this movie?";
+
+//buttons
+"Log In";
+"Log Out";
+"Sign Up";
+
+"Email";
+"Password";
+"My Movie";
+"Enter email";
+"Enter password";
+"Enter";
+
+//Navigation Titles
+"Home";
+"Add More Movies";
+"My Movies";
+
