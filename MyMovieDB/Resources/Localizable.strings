@@ -20,6 +20,7 @@
 "Please, Enter at least one favorite movie!";
 "ErrorMovieDetail" = "Sorry, no more information of this movie";
 "SaveMessage" = "Are you sure you want to save this movie?";
+"AlreadySavedMessage" = "is already saved!";
 
 //buttons
 "Log In";

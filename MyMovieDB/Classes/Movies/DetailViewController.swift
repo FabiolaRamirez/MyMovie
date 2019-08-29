@@ -49,19 +49,20 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func save(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "", message: "SaveMessage".localized, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Save".localized, style: .default) { (action2) in
-            self.saveMovie(self.movie!)
+        if !RDatabase.exist(self.movie!) {
+            let alert = UIAlertController(title: "", message: "SaveMessage".localized, preferredStyle: .alert)
+            let action = UIAlertAction(title: "Save".localized, style: .default) { (action2) in
+                self.saveMovie(self.movie!)
+            }
+            
+            let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel) { (action) in }
+            alert.addAction(cancel)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        } else {
+            showSimpleAlert(title: "", message: "\(self.movie!.Title ?? "") \("AlreadySavedMessage".localized)")
         }
-        
-        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel) { (action) in }
-        alert.addAction(cancel)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-    
     }
-    
-    
     
     @IBAction func fetchDataBase(_ sender: UIButton) {
         var moviesList: [Movie] = []
