@@ -19,8 +19,7 @@ class AddMoviesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationItem.title = "Add More Movies".localized
+        settup()
     }
     
     
@@ -28,6 +27,14 @@ class AddMoviesViewController: UIViewController {
         present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
     
+    func settup() {
+        movieTextField.delegate = self
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        self.navigationItem.title = "Add More Movies".localized
+        searchButton.setTitle("Search".localized,for: .normal)
+    }
+
     // MARK: - Validations
     
     func validateAuthentication() {
@@ -40,10 +47,45 @@ class AddMoviesViewController: UIViewController {
     }
     
     @IBAction func searchMovie(_ sender: UIButton) {
-        
+        verifyField()
     }
     
-
+    func verifyField() {
+        
+        guard let movieName = movieTextField?.text, !movieName.isEmpty else {
+            showSimpleAlert(title: "", message: "Please, Enter a movie!".localized)
+            return
+        }
+        cleanData()
+        
+        if let movieName = movieTextField?.text, !movieName.isEmpty {
+            SearchMovie.shared.movieTitles.append(movieName)
+        }
+        
+        searchMovie()
+    }
+    
+    func cleanData() {
+        SearchMovie.shared.movieTitles.removeAll()
+        SearchMovie.shared.favoriteMovies1.removeAll()
+    }
+    
+    func searchMovie() {
+        activityIndicator.startAnimating()
+        searchButton.isEnabled = false
+        Service.shared.getMoviesOneSearch() {
+            self.activityIndicator.stopAnimating()
+            self.searchButton.isEnabled = true
+            let vc: MoviesViewController = UIViewController.instantiateViewController(storyBoard: "Movie", identifier: "moviesViewController") as! MoviesViewController
+            vc.simpleSearch = true
+            self.navigationController?.pushViewController(vc, animated: false)
+        }
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
 }
 
 extension AddMoviesViewController: UISideMenuNavigationControllerDelegate {
@@ -52,4 +94,13 @@ extension AddMoviesViewController: UISideMenuNavigationControllerDelegate {
         validateAuthentication()
     }
     
+}
+
+extension AddMoviesViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        verifyField()
+        return false
+    }
 }

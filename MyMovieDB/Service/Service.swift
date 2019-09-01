@@ -14,7 +14,7 @@ class Service {
     static let shared = Service()
     
     
-    func getMovieBy(title: String, success: @escaping (MoviesResponse) -> Void, error: @escaping (ErrorResponse) -> Void) {
+    func getMoviesBy(title: String, success: @escaping (MoviesResponse) -> Void, error: @escaping (ErrorResponse) -> Void) {
         let url = "\(URLs.BaseUrl)/?apikey=\(ApiValue.ApiKey)&s=\(title)"
         
         Alamofire.request(url).responseData { response in
@@ -47,7 +47,7 @@ class Service {
                     completionHandler()
                 }
             }
-            getMovieBy(title: movieTitles[0], success: { (response) in
+            getMoviesBy(title: movieTitles[0], success: { (response) in
                 SearchMovie.shared.favoriteMovies1 = response.Search ?? []
                 //print("count movies1: \(response.Search?.count)")
                 handler()
@@ -55,7 +55,7 @@ class Service {
                 handler()
             }
             
-            getMovieBy(title: movieTitles[1], success: { (response) in
+            getMoviesBy(title: movieTitles[1], success: { (response) in
                 SearchMovie.shared.favoriteMovies2 = response.Search ?? []
                 //print("count movies2: \(response.Search?.count)")
                 handler()
@@ -63,7 +63,7 @@ class Service {
                 handler()
             }
             
-            getMovieBy(title: movieTitles[2], success: { (response) in
+            getMoviesBy(title: movieTitles[2], success: { (response) in
                 SearchMovie.shared.favoriteMovies3 = response.Search ?? []
                 //print("count movies3: \(response.Search?.count)")
                 handler()
@@ -71,7 +71,7 @@ class Service {
                 handler()
             }
             
-            getMovieBy(title: movieTitles[3], success: { (response) in
+            getMoviesBy(title: movieTitles[3], success: { (response) in
                 SearchMovie.shared.favoriteMovies4 = response.Search ?? []
                 //print("count movies4: \(response.Search?.count)")
                 handler()
@@ -79,13 +79,23 @@ class Service {
                 handler()
             }
             
-            getMovieBy(title: movieTitles[4], success: { (response) in
+            getMoviesBy(title: movieTitles[4], success: { (response) in
                 SearchMovie.shared.favoriteMovies5 = response.Search ?? []
                 //print("count movies5: \(response.Search?.count)")
                 handler()
             }) { (error) in
                 handler()
             }
+        }
+    }
+    
+    func getMoviesOneSearch(completionHandler: @escaping () -> Void) {
+        let movieTitles = SearchMovie.shared.movieTitles
+        getMoviesBy(title: movieTitles[0], success: { (response) in
+            SearchMovie.shared.favoriteMovies1 = response.Search ?? []
+            completionHandler()
+        }) { (error) in
+            completionHandler()
         }
     }
     

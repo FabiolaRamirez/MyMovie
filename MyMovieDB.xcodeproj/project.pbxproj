@@ -32,8 +32,6 @@
 		20CE66A0231B7BF5004611BB /* MoviesSavedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE669F231B7BF5004611BB /* MoviesSavedPresenter.swift */; };
 		9A20F60B22EA54E6005842B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A20F60A22EA54E6005842B8 /* Localizable.strings */; };
 		9A20F60D22EA5ADB005842B8 /* UIButton+MyMovieDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A20F60C22EA5ADB005842B8 /* UIButton+MyMovieDB.swift */; };
-		9A2312BE22FCBAFA00AB0FDB /* NoResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2312BC22FCBAFA00AB0FDB /* NoResultCell.swift */; };
-		9A2312BF22FCBAFA00AB0FDB /* NoResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2312BD22FCBAFA00AB0FDB /* NoResultCell.xib */; };
 		9A31247D230CA56600DC1967 /* MovieSavedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A31247B230CA56600DC1967 /* MovieSavedCell.swift */; };
 		9A31247E230CA56600DC1967 /* MovieSavedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A31247C230CA56600DC1967 /* MovieSavedCell.xib */; };
 		9A330E2D22E65384000D35E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A330E2C22E65384000D35E7 /* GoogleService-Info.plist */; };
@@ -77,8 +75,6 @@
 		20CE669F231B7BF5004611BB /* MoviesSavedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesSavedPresenter.swift; sourceTree = "<group>"; };
 		9A20F60A22EA54E6005842B8 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		9A20F60C22EA5ADB005842B8 /* UIButton+MyMovieDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+MyMovieDB.swift"; sourceTree = "<group>"; };
-		9A2312BC22FCBAFA00AB0FDB /* NoResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultCell.swift; sourceTree = "<group>"; };
-		9A2312BD22FCBAFA00AB0FDB /* NoResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoResultCell.xib; sourceTree = "<group>"; };
 		9A31247B230CA56600DC1967 /* MovieSavedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSavedCell.swift; sourceTree = "<group>"; };
 		9A31247C230CA56600DC1967 /* MovieSavedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieSavedCell.xib; sourceTree = "<group>"; };
 		9A330E2C22E65384000D35E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -180,8 +176,6 @@
 			children = (
 				20A5F35822F9D45F00D6AE5C /* MovieCell.xib */,
 				20A5F35A22F9D49200D6AE5C /* MovieCollectionViewCell.swift */,
-				9A2312BC22FCBAFA00AB0FDB /* NoResultCell.swift */,
-				9A2312BD22FCBAFA00AB0FDB /* NoResultCell.xib */,
 				208BD174230A0A87005B6F22 /* MovieDetailCell.swift */,
 				208BD175230A0A87005B6F22 /* MovieDetailCell.xib */,
 				9A31247B230CA56600DC1967 /* MovieSavedCell.swift */,
@@ -385,7 +379,6 @@
 				9AFEB8CD22E126FF008DA556 /* LaunchScreen.storyboard in Resources */,
 				9A31247E230CA56600DC1967 /* MovieSavedCell.xib in Resources */,
 				9A20F60B22EA54E6005842B8 /* Localizable.strings in Resources */,
-				9A2312BF22FCBAFA00AB0FDB /* NoResultCell.xib in Resources */,
 				208BD177230A0A88005B6F22 /* MovieDetailCell.xib in Resources */,
 				9AAF1B7822E21C6700CAEF42 /* User.storyboard in Resources */,
 				9A330E2D22E65384000D35E7 /* GoogleService-Info.plist in Resources */,
@@ -465,7 +458,6 @@
 				20CE66A0231B7BF5004611BB /* MoviesSavedPresenter.swift in Sources */,
 				9ACE0B0522E7A2C200B37167 /* UIFont+MyMovieDB.swift in Sources */,
 				9AFEB8D822E12879008DA556 /* LoginViewController.swift in Sources */,
-				9A2312BE22FCBAFA00AB0FDB /* NoResultCell.swift in Sources */,
 				2099962B22F7BFE5002D01F1 /* Constants.swift in Sources */,
 				9AFEB8DA22E128B0008DA556 /* SignUpViewController.swift in Sources */,
 				2099962F22F9C92B002D01F1 /* DetailViewController.swift in Sources */,

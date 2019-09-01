@@ -58,6 +58,7 @@ class HomeTableViewController: UITableViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         self.navigationItem.title = "Home".localized
+        searchButton.setTitle("Search".localized,for: .normal)
         
     }
     
@@ -77,25 +78,25 @@ class HomeTableViewController: UITableViewController {
     func verifyFields() {
         
         guard let movie1 = movieTextField1?.text, !movie1.isEmpty, let movie2 = movieTextField2?.text, !movie2.isEmpty, let movie3 = movieTextField3?.text, !movie3.isEmpty, let movie4 = movieTextField4?.text, !movie4.isEmpty, let movie5 = movieTextField5?.text, !movie5.isEmpty else {
-            showSimpleAlert(title: "", message: "Please, Enter your favorite movies!".localized)
+            showSimpleAlert(title: "", message: "Please, Enter five movies!".localized)
             return
         }
         cleanData()
         
-        if let movie = movieTextField1?.text, !movie.isEmpty {
-            SearchMovie.shared.movieTitles.append(movie)
+        if let movieName = movieTextField1?.text, !movieName.isEmpty {
+            SearchMovie.shared.movieTitles.append(movieName)
         }
-        if let movie = movieTextField2?.text, !movie.isEmpty {
-            SearchMovie.shared.movieTitles.append(movie)
+        if let movieName = movieTextField2?.text, !movieName.isEmpty {
+            SearchMovie.shared.movieTitles.append(movieName)
         }
-        if let movie = movieTextField3?.text, !movie.isEmpty {
-            SearchMovie.shared.movieTitles.append(movie)
+        if let movieName = movieTextField3?.text, !movieName.isEmpty {
+            SearchMovie.shared.movieTitles.append(movieName)
         }
-        if let movie = movieTextField4?.text, !movie.isEmpty {
-            SearchMovie.shared.movieTitles.append(movie)
+        if let movieName = movieTextField4?.text, !movieName.isEmpty {
+            SearchMovie.shared.movieTitles.append(movieName)
         }
-        if let movie = movieTextField5?.text, !movie.isEmpty {
-            SearchMovie.shared.movieTitles.append(movie)
+        if let movieName = movieTextField5?.text, !movieName.isEmpty {
+            SearchMovie.shared.movieTitles.append(movieName)
         }
         
         searchMovies()

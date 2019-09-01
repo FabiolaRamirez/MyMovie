@@ -21,11 +21,14 @@
 "ErrorMovieDetail" = "Sorry, no more information of this movie";
 "SaveMessage" = "Are you sure you want to save this movie?";
 "AlreadySavedMessage" = "is already saved!";
+"Please, Enter five movies!";
+"Please, Enter a movie!";
 
 //buttons
 "Log In";
 "Log Out";
 "Sign Up";
+"Search";
 
 "Email";
 "Password";

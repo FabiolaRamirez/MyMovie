@@ -8,22 +8,6 @@
 
 import Foundation
 import RealmSwift
-/*class Movie {
-    
-    var title: String?
-    var description: String?
-    
-    init() {
-        title = ""
-        description = ""
-    }
-    
-    init(title: String, description: String) {
-        self.title = title
-        self.description = description
-    }
-    
-}*/
 
 class SearchMovie {
     static let shared = SearchMovie()
@@ -57,22 +41,6 @@ class Movie: Object, Decodable {
         return "imdbID"
     }
 }
-
-/*class MovieDetail: Object, Decodable {
-    
-    @objc dynamic var Title: String?
-    @objc dynamic var Year: String?
-    @objc dynamic var imdbID: String?
-    @objc dynamic var Poster: String?
-    @objc dynamic var Genre: String?
-    @objc dynamic var Plot: String?
-    @objc dynamic var imdbRating: String?
-    @objc dynamic var Language: String?
-    
-    override static func primaryKey() -> String? {
-        return "imdbID"
-    }
-}*/
 
 struct ErrorResponse {
     let message: String?
