@@ -237,15 +237,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="L8o-G7-Uls">
                         <barButtonItem key="backBarButtonItem" title=" " id="NS8-xk-vTy"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="K0c-5c-WZ7">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="K0c-5c-WZ7">
                             <connections>
-                                <action selector="save:" destination="fJN-23-HAw" id="Gg1-c8-N2C"/>
+                                <action selector="saveOrDelete:" destination="fJN-23-HAw" id="1GF-Pr-1Cg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="activityIndicator" destination="3Vg-rm-4Fc" id="1xY-kH-CpL"/>
+                        <outlet property="saveOrDeleteItem" destination="K0c-5c-WZ7" id="7Pj-hA-B9K"/>
                         <outlet property="tableView" destination="OPc-Vj-qRE" id="BdM-5a-Idm"/>
                     </connections>
                 </viewController>

@@ -27,7 +27,12 @@ class MoviesSavedTableViewController: UITableViewController {
         self.navigationItem.title = "Home".localized
         settingMenu()
         self.moviesSavedPresenter = MoviesSavedPresenter(delegate: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         loadMovies()
+        self.tableView.reloadData()
     }
     
     func loadMovies() {
@@ -93,10 +98,9 @@ class MoviesSavedTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        
+         let movieId = movies[indexPath.row].imdbID!
+         showMovieDetail(movieId: movieId)
     }
-
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -105,6 +109,13 @@ class MoviesSavedTableViewController: UITableViewController {
             loadMovies()
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    func showMovieDetail(movieId: String) {
+        let vc: DetailViewController = UIViewController.instantiateViewController(storyBoard: "Movie", identifier: "detailViewController") as! DetailViewController
+        vc.movieId = movieId
+        vc.isItemForDeletingState = true
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     // MARK: Methods for Database

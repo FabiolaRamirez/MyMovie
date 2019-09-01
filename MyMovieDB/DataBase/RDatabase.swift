@@ -24,8 +24,10 @@ class RDatabase {
     
     static func deleteMovie(_ movie: Movie) {
         let realm = try! Realm()
-        try! realm.write {
-            realm.delete(movie)
+        if let m = realm.object(ofType: Movie.self, forPrimaryKey: movie.imdbID) {
+            try! realm.write {
+                realm.delete(m)
+            }
         }
     }
     

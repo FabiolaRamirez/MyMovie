@@ -15,6 +15,7 @@
 		2022BF8422F793BE00CCAB73 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2022BF8322F793BE00CCAB73 /* Service.swift */; };
 		204964CF22F4849500467465 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204964CE22F4849500467465 /* SideMenuTableViewController.swift */; };
 		204964D122F484A700467465 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204964D022F484A700467465 /* Menu.storyboard */; };
+		20674983231C8C95003768FB /* DetailMovieDeletionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20674982231C8C95003768FB /* DetailMovieDeletionPresenter.swift */; };
 		208BD1732308D54F005B6F22 /* RDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BD1722308D54F005B6F22 /* RDatabase.swift */; };
 		208BD176230A0A88005B6F22 /* MovieDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BD174230A0A87005B6F22 /* MovieDetailCell.swift */; };
 		208BD177230A0A88005B6F22 /* MovieDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 208BD175230A0A87005B6F22 /* MovieDetailCell.xib */; };
@@ -58,6 +59,7 @@
 		2022BF8322F793BE00CCAB73 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		204964CE22F4849500467465 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		204964D022F484A700467465 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		20674982231C8C95003768FB /* DetailMovieDeletionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieDeletionPresenter.swift; sourceTree = "<group>"; };
 		208BD1722308D54F005B6F22 /* RDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDatabase.swift; sourceTree = "<group>"; };
 		208BD174230A0A87005B6F22 /* MovieDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailCell.swift; sourceTree = "<group>"; };
 		208BD175230A0A87005B6F22 /* MovieDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailCell.xib; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				208BD1722308D54F005B6F22 /* RDatabase.swift */,
 				20CE669D231B793A004611BB /* DetailMoviePresenter.swift */,
 				20CE669F231B7BF5004611BB /* MoviesSavedPresenter.swift */,
+				20674982231C8C95003768FB /* DetailMovieDeletionPresenter.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20674983231C8C95003768FB /* DetailMovieDeletionPresenter.swift in Sources */,
 				20C4FE5922F299DF001DEE73 /* SignUpPresenter.swift in Sources */,
 				20C4FE5622F28B2D001DEE73 /* LoginPresenter.swift in Sources */,
 				2022BF8422F793BE00CCAB73 /* Service.swift in Sources */,

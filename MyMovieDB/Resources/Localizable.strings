@@ -23,12 +23,15 @@
 "AlreadySavedMessage" = "is already saved!";
 "Please, Enter five movies!";
 "Please, Enter a movie!";
+"DeleteMessage" = "Are you sure you want to delete this movie?";
 
 //buttons
 "Log In";
 "Log Out";
 "Sign Up";
 "Search";
+"Delete";
+"Save";
 
 "Email";
 "Password";
