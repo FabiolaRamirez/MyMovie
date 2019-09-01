@@ -12,6 +12,11 @@ import SideMenu
 
 class AddMoviesViewController: UIViewController {
 
+    @IBOutlet weak var movieTextField: UITextField!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +38,11 @@ class AddMoviesViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func searchMovie(_ sender: UIButton) {
+        
+    }
+    
 
 }
 

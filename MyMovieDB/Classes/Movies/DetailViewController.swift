@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol DetailMoviePresenterDelegate {
+    func saveMovie(movie: Movie)
+    func existMovie(movie: Movie)
+}
+
 class DetailViewController: UIViewController {
 
     
@@ -17,11 +22,13 @@ class DetailViewController: UIViewController {
     private let cellIdentifier = "movieDetailCell"
     var movieId: String?
     var movie: Movie?
+    var detailMoviePresenter: DetailMoviePresenterDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setData()
         tableView.register(UINib.init(nibName: "MovieDetailCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        self.detailMoviePresenter = DetailMoviePresenter(delegate: self)
     }
     
     func setData() {
@@ -49,31 +56,7 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func save(_ sender: UIBarButtonItem) {
-        if !RDatabase.exist(self.movie!) {
-            let alert = UIAlertController(title: "", message: "SaveMessage".localized, preferredStyle: .alert)
-            let action = UIAlertAction(title: "Save".localized, style: .default) { (action2) in
-                self.saveMovie(self.movie!)
-            }
-            
-            let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel) { (action) in }
-            alert.addAction(cancel)
-            alert.addAction(action)
-            present(alert, animated: true, completion: nil)
-        } else {
-            showSimpleAlert(title: "", message: "\(self.movie!.Title ?? "") \("AlreadySavedMessage".localized)")
-        }
-    }
-    
-    @IBAction func fetchDataBase(_ sender: UIButton) {
-        var moviesList: [Movie] = []
-        moviesList = RDatabase.fetchMovies()
-        print("count: \(moviesList.count), \(moviesList)")
-    }
-    
-    // MARK: Methods for Database
-
-    func saveMovie(_ movie: Movie) {
-        RDatabase.saveMovie(movie)
+        self.detailMoviePresenter?.existMovie(movie: self.movie!)
     }
     
 }
@@ -88,6 +71,30 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         cell.initWithData(movie)
         return cell
     }
+    
+    
+}
+
+extension DetailViewController: MovieDetailProtocol {
+
+    
+    func movieAlreadyExist() {
+        showSimpleAlert(title: "", message: "\(self.movie!.Title ?? "") \("AlreadySavedMessage".localized)")
+    }
+    
+    func movieCanBeSaved() {
+        let alert = UIAlertController(title: "", message: "SaveMessage".localized, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Save".localized, style: .default) { (action2) in
+            self.detailMoviePresenter?.saveMovie(movie: self.movie!)
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel) { (action) in }
+        alert.addAction(cancel)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
     
     
 }

@@ -10,23 +10,30 @@ import UIKit
 import Firebase
 import SideMenu
 
+protocol MoviesSavedPresenterDelegate {
+    func deleteMovie(movie: Movie)
+    func getMovies() -> [Movie]
+}
 
 class MoviesSavedTableViewController: UITableViewController {
 
     let cellIdentifier = "movieSavedCell"
     var movies: [Movie] = []
+    var moviesSavedPresenter: MoviesSavedPresenterDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib.init(nibName: "MovieSavedCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         self.navigationItem.title = "Home".localized
-        loadMovies()
         settingMenu()
+        self.moviesSavedPresenter = MoviesSavedPresenter(delegate: self)
+        loadMovies()
     }
     
     func loadMovies() {
-        movies = RDatabase.fetchMovies()
+        movies = moviesSavedPresenter?.getMovies() ?? []
     }
+    
     @IBAction func searchMovies(_ sender: UIBarButtonItem) {
 
         let vc  = UIViewController.instantiateViewController(storyBoard: "Main", identifier: "homeTableViewController") as! HomeTableViewController
@@ -103,7 +110,7 @@ class MoviesSavedTableViewController: UITableViewController {
     // MARK: Methods for Database
     
     func deleteMovie(_ movie: Movie) {
-        RDatabase.deleteMovie(movie)
+        self.moviesSavedPresenter?.deleteMovie(movie: movie)
     }
     
 
@@ -116,3 +123,14 @@ extension MoviesSavedTableViewController: UISideMenuNavigationControllerDelegate
     }
     
 }
+
+extension MoviesSavedTableViewController: MovieSavedProtocol {
+    func successfullyMovieDeleted() {
+        print("successfully Deleted!")
+    }
+    
+    
+}
+
+
+
