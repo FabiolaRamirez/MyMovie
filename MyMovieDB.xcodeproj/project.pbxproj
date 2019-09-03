@@ -35,6 +35,7 @@
 		9A31247E230CA56600DC1967 /* MovieSavedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A31247C230CA56600DC1967 /* MovieSavedCell.xib */; };
 		9A330E2D22E65384000D35E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A330E2C22E65384000D35E7 /* GoogleService-Info.plist */; };
 		9A5F6265230D9399005EF85F /* MoviesSavedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F6264230D9399005EF85F /* MoviesSavedTableViewController.swift */; };
+		9A715532231F1F2000031FB5 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A715531231F1F2000031FB5 /* HomePresenter.swift */; };
 		9AAF1B7822E21C6700CAEF42 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AAF1B7A22E21C6700CAEF42 /* User.storyboard */; };
 		9ACE0B0322E79CD000B37167 /* UIColor+MyMovieDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE0B0222E79CD000B37167 /* UIColor+MyMovieDB.swift */; };
 		9ACE0B0522E7A2C200B37167 /* UIFont+MyMovieDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE0B0422E7A2C200B37167 /* UIFont+MyMovieDB.swift */; };
@@ -77,6 +78,7 @@
 		9A31247C230CA56600DC1967 /* MovieSavedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieSavedCell.xib; sourceTree = "<group>"; };
 		9A330E2C22E65384000D35E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9A5F6264230D9399005EF85F /* MoviesSavedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesSavedTableViewController.swift; sourceTree = "<group>"; };
+		9A715531231F1F2000031FB5 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		9AAF1B7922E21C6700CAEF42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/User.storyboard; sourceTree = "<group>"; };
 		9ACE0B0222E79CD000B37167 /* UIColor+MyMovieDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+MyMovieDB.swift"; sourceTree = "<group>"; };
 		9ACE0B0422E7A2C200B37167 /* UIFont+MyMovieDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+MyMovieDB.swift"; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 			children = (
 				9AFEB8C622E126FD008DA556 /* Main.storyboard */,
 				208FB3A02313419800F6E1F4 /* HomeTableViewController.swift */,
+				9A715531231F1F2000031FB5 /* HomePresenter.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				204964CF22F4849500467465 /* SideMenuTableViewController.swift in Sources */,
 				2022BF8022F77A3500CCAB73 /* String+MyMovieDB.swift in Sources */,
 				208FB3A12313419800F6E1F4 /* HomeTableViewController.swift in Sources */,
+				9A715532231F1F2000031FB5 /* HomePresenter.swift in Sources */,
 				2099962D22F9C912002D01F1 /* MoviesViewController.swift in Sources */,
 				208BD1732308D54F005B6F22 /* RDatabase.swift in Sources */,
 			);

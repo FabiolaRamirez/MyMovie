@@ -10,6 +10,9 @@ import UIKit
 import Firebase
 import SideMenu
 
+protocol HomePresenterDelegate {
+    func searchMovies()
+}
 
 class HomeTableViewController: UITableViewController {
     
@@ -21,6 +24,7 @@ class HomeTableViewController: UITableViewController {
     
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var homePresenter: HomePresenterDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +63,7 @@ class HomeTableViewController: UITableViewController {
         view.addGestureRecognizer(tap)
         self.navigationItem.title = "Home".localized
         searchButton.setTitle("Search".localized,for: .normal)
-        
+        self.homePresenter = HomePresenter(delegate: self)
     }
     
     @objc func dismissKeyboard() {
@@ -112,14 +116,7 @@ class HomeTableViewController: UITableViewController {
     }
     
     func searchMovies() {
-        activityIndicator.startAnimating()
-        searchButton.isEnabled = false
-        Service.shared.searchMovies {
-            self.activityIndicator.stopAnimating()
-            self.searchButton.isEnabled = true
-            let vc: MoviesViewController = UIViewController.instantiateViewController(storyBoard: "Movie", identifier: "moviesViewController") as! MoviesViewController
-            self.navigationController?.pushViewController(vc, animated: false)
-        }
+        homePresenter?.searchMovies()
     }
     
     
@@ -136,10 +133,7 @@ class HomeTableViewController: UITableViewController {
         } else {
             return 1
         }
-        
     }
-    
-    
 }
 
 extension HomeTableViewController: UISideMenuNavigationControllerDelegate {
@@ -158,4 +152,21 @@ extension HomeTableViewController: UITextFieldDelegate {
         return false
     }
 }
+
+extension HomeTableViewController: HomeProtocol {
+    
+    func taskFinished() {
+        self.activityIndicator.stopAnimating()
+        self.searchButton.isEnabled = true
+        let vc: MoviesViewController = UIViewController.instantiateViewController(storyBoard: "Movie", identifier: "moviesViewController") as! MoviesViewController
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    func updateUIWhenTaskstarts() {
+        activityIndicator.startAnimating()
+        searchButton.isEnabled = false
+    }
+    
+}
+
 
