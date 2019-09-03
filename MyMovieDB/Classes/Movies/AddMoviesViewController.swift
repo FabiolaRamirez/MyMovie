@@ -10,12 +10,16 @@ import UIKit
 import Firebase
 import SideMenu
 
+protocol AddMoviesPresenterDelegate {
+    func searchMovies()
+}
+
 class AddMoviesViewController: UIViewController {
 
     @IBOutlet weak var movieTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
+    var addMoviesPresenter: AddMoviesPresenterDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +37,7 @@ class AddMoviesViewController: UIViewController {
         view.addGestureRecognizer(tap)
         self.navigationItem.title = "Add More Movies".localized
         searchButton.setTitle("Search".localized,for: .normal)
+        self.addMoviesPresenter = AddMoviesPresenter(delegate: self)
     }
 
     // MARK: - Validations
@@ -71,15 +76,7 @@ class AddMoviesViewController: UIViewController {
     }
     
     func searchMovie() {
-        activityIndicator.startAnimating()
-        searchButton.isEnabled = false
-        Service.shared.getMoviesOneSearch() {
-            self.activityIndicator.stopAnimating()
-            self.searchButton.isEnabled = true
-            let vc: MoviesViewController = UIViewController.instantiateViewController(storyBoard: "Movie", identifier: "moviesViewController") as! MoviesViewController
-            vc.simpleSearch = true
-            self.navigationController?.pushViewController(vc, animated: false)
-        }
+        addMoviesPresenter?.searchMovies()
     }
     
     @objc func dismissKeyboard() {
@@ -103,4 +100,21 @@ extension AddMoviesViewController: UITextFieldDelegate {
         verifyField()
         return false
     }
+}
+
+extension AddMoviesViewController: AddMoviesProtocol {
+    
+    func taskFinished() {
+        self.activityIndicator.stopAnimating()
+        self.searchButton.isEnabled = true
+        let vc: MoviesViewController = UIViewController.instantiateViewController(storyBoard: "Movie", identifier: "moviesViewController") as! MoviesViewController
+        vc.simpleSearch = true
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    func updateUIWhenTaskstarts() {
+        activityIndicator.startAnimating()
+        searchButton.isEnabled = false
+    }
+    
 }

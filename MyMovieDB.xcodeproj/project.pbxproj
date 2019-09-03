@@ -36,6 +36,7 @@
 		9A330E2D22E65384000D35E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A330E2C22E65384000D35E7 /* GoogleService-Info.plist */; };
 		9A5F6265230D9399005EF85F /* MoviesSavedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F6264230D9399005EF85F /* MoviesSavedTableViewController.swift */; };
 		9A715532231F1F2000031FB5 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A715531231F1F2000031FB5 /* HomePresenter.swift */; };
+		9A715534231F271B00031FB5 /* AddMoviesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A715533231F271B00031FB5 /* AddMoviesPresenter.swift */; };
 		9AAF1B7822E21C6700CAEF42 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AAF1B7A22E21C6700CAEF42 /* User.storyboard */; };
 		9ACE0B0322E79CD000B37167 /* UIColor+MyMovieDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE0B0222E79CD000B37167 /* UIColor+MyMovieDB.swift */; };
 		9ACE0B0522E7A2C200B37167 /* UIFont+MyMovieDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE0B0422E7A2C200B37167 /* UIFont+MyMovieDB.swift */; };
@@ -79,6 +80,7 @@
 		9A330E2C22E65384000D35E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9A5F6264230D9399005EF85F /* MoviesSavedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesSavedTableViewController.swift; sourceTree = "<group>"; };
 		9A715531231F1F2000031FB5 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		9A715533231F271B00031FB5 /* AddMoviesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoviesPresenter.swift; sourceTree = "<group>"; };
 		9AAF1B7922E21C6700CAEF42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/User.storyboard; sourceTree = "<group>"; };
 		9ACE0B0222E79CD000B37167 /* UIColor+MyMovieDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+MyMovieDB.swift"; sourceTree = "<group>"; };
 		9ACE0B0422E7A2C200B37167 /* UIFont+MyMovieDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+MyMovieDB.swift"; sourceTree = "<group>"; };
@@ -120,9 +122,12 @@
 			children = (
 				2022BF7D22F64D6200CCAB73 /* Movie.storyboard */,
 				2022BF7B22F64D4800CCAB73 /* AddMoviesViewController.swift */,
+				9A715533231F271B00031FB5 /* AddMoviesPresenter.swift */,
 				2099962C22F9C912002D01F1 /* MoviesViewController.swift */,
 				2099962E22F9C92B002D01F1 /* DetailViewController.swift */,
+				20CE669D231B793A004611BB /* DetailMoviePresenter.swift */,
 				9A5F6264230D9399005EF85F /* MoviesSavedTableViewController.swift */,
+				20CE669F231B7BF5004611BB /* MoviesSavedPresenter.swift */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -156,8 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				208BD1722308D54F005B6F22 /* RDatabase.swift */,
-				20CE669D231B793A004611BB /* DetailMoviePresenter.swift */,
-				20CE669F231B7BF5004611BB /* MoviesSavedPresenter.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				20C4FE5922F299DF001DEE73 /* SignUpPresenter.swift in Sources */,
 				20C4FE5622F28B2D001DEE73 /* LoginPresenter.swift in Sources */,
 				2022BF8422F793BE00CCAB73 /* Service.swift in Sources */,
+				9A715534231F271B00031FB5 /* AddMoviesPresenter.swift in Sources */,
 				9A20F60D22EA5ADB005842B8 /* UIButton+MyMovieDB.swift in Sources */,
 				20CE66A0231B7BF5004611BB /* MoviesSavedPresenter.swift in Sources */,
 				9ACE0B0522E7A2C200B37167 /* UIFont+MyMovieDB.swift in Sources */,
