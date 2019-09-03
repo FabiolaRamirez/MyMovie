@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2022BF7522F64AA500CCAB73 /* UIViewController+MyMovieDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2022BF7422F64AA500CCAB73 /* UIViewController+MyMovieDB.swift */; };
-		2022BF7A22F64D1E00CCAB73 /* MyMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2022BF7922F64D1E00CCAB73 /* MyMoviesViewController.swift */; };
 		2022BF7C22F64D4800CCAB73 /* AddMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2022BF7B22F64D4800CCAB73 /* AddMoviesViewController.swift */; };
 		2022BF7E22F64D6200CCAB73 /* Movie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2022BF7D22F64D6200CCAB73 /* Movie.storyboard */; };
 		2022BF8022F77A3500CCAB73 /* String+MyMovieDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2022BF7F22F77A3500CCAB73 /* String+MyMovieDB.swift */; };
@@ -52,7 +51,6 @@
 /* Begin PBXFileReference section */
 		129420D66EB8AACFA186B860 /* Pods_MyMovieDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMovieDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2022BF7422F64AA500CCAB73 /* UIViewController+MyMovieDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+MyMovieDB.swift"; sourceTree = "<group>"; };
-		2022BF7922F64D1E00CCAB73 /* MyMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMoviesViewController.swift; sourceTree = "<group>"; };
 		2022BF7B22F64D4800CCAB73 /* AddMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoviesViewController.swift; sourceTree = "<group>"; };
 		2022BF7D22F64D6200CCAB73 /* Movie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movie.storyboard; sourceTree = "<group>"; };
 		2022BF7F22F77A3500CCAB73 /* String+MyMovieDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MyMovieDB.swift"; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 			children = (
 				2022BF7D22F64D6200CCAB73 /* Movie.storyboard */,
 				2022BF7B22F64D4800CCAB73 /* AddMoviesViewController.swift */,
-				2022BF7922F64D1E00CCAB73 /* MyMoviesViewController.swift */,
 				2099962C22F9C912002D01F1 /* MoviesViewController.swift */,
 				2099962E22F9C92B002D01F1 /* DetailViewController.swift */,
 				9A5F6264230D9399005EF85F /* MoviesSavedTableViewController.swift */,
@@ -468,7 +465,6 @@
 				9A31247D230CA56600DC1967 /* MovieSavedCell.swift in Sources */,
 				208BD176230A0A88005B6F22 /* MovieDetailCell.swift in Sources */,
 				9ACE0B0322E79CD000B37167 /* UIColor+MyMovieDB.swift in Sources */,
-				2022BF7A22F64D1E00CCAB73 /* MyMoviesViewController.swift in Sources */,
 				20A5F35B22F9D49200D6AE5C /* MovieCollectionViewCell.swift in Sources */,
 				9AFEB8C322E126FD008DA556 /* AppDelegate.swift in Sources */,
 				20A5F36122FA302200D6AE5C /* RecipeCollectionReusableView.swift in Sources */,

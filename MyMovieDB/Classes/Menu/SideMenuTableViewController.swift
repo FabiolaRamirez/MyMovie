@@ -19,7 +19,6 @@ class SideMenuTableViewController: UIViewController {
     enum SideMenuOption: Int {
         case home = 0
         case addMoreMovies
-        case myMovies
         case logOut
         
         var name: String {
@@ -28,26 +27,21 @@ class SideMenuTableViewController: UIViewController {
                 return "Home".localized
             case .addMoreMovies:
                 return "Add More Movies".localized
-            case .myMovies:
-                return "My Movies".localized
             case .logOut:
                 return "Log Out".localized
             }
         }
         
         static var all: [SideMenuOption] {
-            return [.home, .addMoreMovies, .myMovies, .logOut]
+            return [.home, .addMoreMovies, .logOut]
         }
     }
-    
-    
     
     override func viewDidLoad() {
         super .viewDidLoad()
         tableView.backgroundColor = .white
         
     }
-    
     
     func showHome() {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -62,12 +56,6 @@ class SideMenuTableViewController: UIViewController {
     
     func showAddMoreMovies() {
         let vc: AddMoviesViewController = UIViewController.instantiateViewController(storyBoard: "Movie", identifier: "addMoviesViewController") as! AddMoviesViewController
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
-        navigationController?.pushViewController(vc, animated: false)
-    }
-    
-    func showMyMovies() {
-        let vc: MyMoviesViewController = UIViewController.instantiateViewController(storyBoard: "Movie", identifier: "myMoviesViewController") as! MyMoviesViewController
         self.presentingViewController?.dismiss(animated: true, completion: nil)
         navigationController?.pushViewController(vc, animated: false)
     }
@@ -127,8 +115,6 @@ extension SideMenuTableViewController: UITableViewDelegate, UITableViewDataSourc
             showHome()
         case .addMoreMovies:
             showAddMoreMovies()
-        case .myMovies:
-            showMyMovies()
         case .logOut:
             logout()
         }

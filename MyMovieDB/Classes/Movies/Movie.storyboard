@@ -74,46 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QQD-h1-5j9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-649.27536231884062" y="87.228260869565219"/>
-        </scene>
-        <!--My Movies View Controller-->
-        <scene sceneID="9cQ-Ki-0Lb">
-            <objects>
-                <viewController storyboardIdentifier="myMoviesViewController" id="FUm-Zb-mC2" customClass="MyMoviesViewController" customModule="MyMovieDB" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="faM-AO-FKa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Movies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfF-hK-LSY">
-                                <rect key="frame" x="20" y="104" width="374" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="PhH-2g-FRj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="SfF-hK-LSY" firstAttribute="leading" secondItem="JTn-GY-35Z" secondAttribute="leading" constant="20" id="OSP-47-ciS"/>
-                            <constraint firstItem="SfF-hK-LSY" firstAttribute="top" secondItem="JTn-GY-35Z" secondAttribute="top" constant="40" id="WWA-lI-nRH"/>
-                            <constraint firstItem="JTn-GY-35Z" firstAttribute="trailing" secondItem="SfF-hK-LSY" secondAttribute="trailing" constant="20" id="whJ-ve-2DO"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="JTn-GY-35Z"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="9bj-EX-mgE">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="dk4-LG-IIz">
-                            <connections>
-                                <action selector="showMenu:" destination="FUm-Zb-mC2" id="F5P-0O-9hP"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dFq-tZ-GPt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="702.89855072463774" y="118.20652173913044"/>
+            <point key="canvasLocation" x="667" y="120"/>
         </scene>
         <!--Movies View Controller-->
         <scene sceneID="BPG-4R-Twd">
