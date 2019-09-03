@@ -14,8 +14,6 @@ protocol MovieSavedProtocol: class {
 
 class MoviesSavedPresenter: MoviesSavedPresenterDelegate {
     
-    
-    
     weak var delegate: MovieSavedProtocol?
     
     init(delegate: MovieSavedProtocol) {
@@ -32,5 +30,4 @@ class MoviesSavedPresenter: MoviesSavedPresenterDelegate {
         return movies
     }
 
-    
 }

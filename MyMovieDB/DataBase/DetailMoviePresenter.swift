@@ -11,6 +11,7 @@ import Foundation
 protocol MovieDetailProtocol: class {
     func movieAlreadyExist()
     func movieCanBeSaved()
+    func successfullyMovieDeleted()
 }
 
 class DetailMoviePresenter: DetailMoviePresenterDelegate {
@@ -33,6 +34,9 @@ class DetailMoviePresenter: DetailMoviePresenterDelegate {
         }
     }
     
-    
-    
+    func deleteMovie(movie: Movie) {
+        RDatabase.deleteMovie(movie)
+        delegate?.successfullyMovieDeleted()
+    }
+
 }

@@ -11,14 +11,10 @@ import UIKit
 protocol DetailMoviePresenterDelegate {
     func saveMovie(movie: Movie)
     func existMovie(movie: Movie)
-}
-
-protocol DetailMovieDeletionPresenterDelegate {
     func deleteMovie(movie: Movie)
 }
 
 class DetailViewController: UIViewController {
-
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -29,14 +25,12 @@ class DetailViewController: UIViewController {
     var movie: Movie?
     var detailMoviePresenter: DetailMoviePresenterDelegate?
     var isItemForDeletingState = false
-    var detailMovieDeletionPresenter: DetailMovieDeletionPresenterDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setData()
         tableView.register(UINib.init(nibName: "MovieDetailCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         self.detailMoviePresenter = DetailMoviePresenter(delegate: self)
-        self.detailMovieDeletionPresenter = DetailMovieDeletionPresenter(delegate: self)
         if isItemForDeletingState {
             saveOrDeleteItem.title = "Delete".localized
             saveOrDeleteItem.tintColor = .red
@@ -49,7 +43,6 @@ class DetailViewController: UIViewController {
         self.navigationItem.title = movie?.Title ?? ""
         tableView.reloadData()
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -73,7 +66,7 @@ class DetailViewController: UIViewController {
         if isItemForDeletingState {
             let alert = UIAlertController(title: "", message: "DeleteMessage".localized, preferredStyle: .alert)
             let action = UIAlertAction(title: "Delete".localized, style: .default) { (action2) in
-                self.detailMovieDeletionPresenter?.deleteMovie(movie: self.movie!)
+                self.detailMoviePresenter?.deleteMovie(movie: self.movie!)
             }
             let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel) { (action) in }
             alert.addAction(cancel)
@@ -101,7 +94,6 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension DetailViewController: MovieDetailProtocol {
-
     
     func movieAlreadyExist() {
         showSimpleAlert(title: "", message: "\(self.movie!.Title ?? "") \("AlreadySavedMessage".localized)")
@@ -119,13 +111,8 @@ extension DetailViewController: MovieDetailProtocol {
         present(alert, animated: true, completion: nil)
     }
     
-}
-
-extension DetailViewController: MovieDeletedProtocol {
     func successfullyMovieDeleted() {
-        print("successfully Deleted!")
         self.navigationController?.popViewController(animated: true)
     }
-    
     
 }
