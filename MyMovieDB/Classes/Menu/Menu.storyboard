@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="DMU-3d-u97">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="699"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menuCellIdentifier" id="ZOy-rm-K5Y">
@@ -36,19 +36,32 @@
                                     <outlet property="delegate" destination="q3o-Pw-DNs" id="hm5-bq-xAh"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srS-n5-fm0">
+                                <rect key="frame" x="16" y="699" width="382" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="bVn-am-1PC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DMU-3d-u97" firstAttribute="top" secondItem="kES-Rq-ACt" secondAttribute="top" id="391-Ky-ATy"/>
                             <constraint firstItem="DMU-3d-u97" firstAttribute="leading" secondItem="Krl-wt-dr5" secondAttribute="leading" id="Brt-m8-tpa"/>
+                            <constraint firstItem="srS-n5-fm0" firstAttribute="top" secondItem="DMU-3d-u97" secondAttribute="bottom" id="Nj8-LL-6wm"/>
                             <constraint firstItem="DMU-3d-u97" firstAttribute="trailing" secondItem="Krl-wt-dr5" secondAttribute="trailing" id="T7x-3h-Ggo"/>
-                            <constraint firstItem="DMU-3d-u97" firstAttribute="bottom" secondItem="Krl-wt-dr5" secondAttribute="bottom" id="eCr-mZ-7nA"/>
+                            <constraint firstItem="Krl-wt-dr5" firstAttribute="bottom" secondItem="srS-n5-fm0" secondAttribute="bottom" constant="16" id="TBv-W9-ljT"/>
+                            <constraint firstItem="srS-n5-fm0" firstAttribute="leading" secondItem="Krl-wt-dr5" secondAttribute="leading" constant="16" id="kFt-Nx-dR4"/>
+                            <constraint firstItem="Krl-wt-dr5" firstAttribute="trailing" secondItem="srS-n5-fm0" secondAttribute="trailing" constant="16" id="rS0-Qc-Tuk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Krl-wt-dr5"/>
                     </view>
                     <navigationItem key="navigationItem" id="e2p-4w-1fC"/>
                     <connections>
                         <outlet property="tableView" destination="DMU-3d-u97" id="Hte-Vl-JlW"/>
+                        <outlet property="versionLabel" destination="srS-n5-fm0" id="37B-PI-ze1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SxC-iI-y4G" userLabel="First Responder" sceneMemberID="firstResponder"/>

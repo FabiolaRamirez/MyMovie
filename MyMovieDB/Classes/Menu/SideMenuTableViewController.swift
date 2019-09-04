@@ -15,6 +15,7 @@ class SideMenuTableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     private let menuCellIdentifier = "menuCellIdentifier"
+    @IBOutlet weak var versionLabel: UILabel!
     
     enum SideMenuOption: Int {
         case home = 0
@@ -39,14 +40,17 @@ class SideMenuTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super .viewDidLoad()
+        settup()
+    }
+    
+    func settup() {
         tableView.backgroundColor = .white
-        
+        versionLabel.isHidden = true
         #if DEV
-        print("It is dev!")
-        #elseif STAGE
-        print("It is stage!")
-        #elseif PROD
-        print("It is prod!")
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0"
+        let appBuild = Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as? String ?? "0"
+        versionLabel.text = "Version: v\(appVersion) (\(appBuild))"
+        versionLabel.isHidden = false
         #endif
     }
     
