@@ -41,6 +41,13 @@ class SideMenuTableViewController: UIViewController {
         super .viewDidLoad()
         tableView.backgroundColor = .white
         
+        #if DEV
+        print("It is dev!")
+        #elseif STAGE
+        print("It is stage!")
+        #elseif PROD
+        print("It is prod!")
+        #endif
     }
     
     func showHome() {
