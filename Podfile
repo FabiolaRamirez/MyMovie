@@ -11,6 +11,8 @@ pod 'SideMenu', '5.0.3'
 pod 'Alamofire', '4.8.2'
 pod 'SDWebImage', '~> 5.0'
 pod 'RealmSwift'
+pod 'Fabric', '~> 1.7.2'
+pod 'Crashlytics', '~> 3.9.3'
 
 end
 

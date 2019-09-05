@@ -30,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         
+        //crashlytics
+        Fabric.sharedSDK().debug = true
+        
         return true
     }
     

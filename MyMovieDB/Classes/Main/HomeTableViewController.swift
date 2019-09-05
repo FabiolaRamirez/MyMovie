@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SideMenu
+import Crashlytics
 
 protocol HomePresenterDelegate {
     func searchMovies()
@@ -72,6 +73,7 @@ class HomeTableViewController: UITableViewController {
     }
     
     @IBAction func showMenu(_ sender: UIBarButtonItem) {
+        Crashlytics.sharedInstance().crash()
         present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
     
