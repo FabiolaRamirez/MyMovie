@@ -23,11 +23,21 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Stage-Release"
+      buildConfiguration = "Stage-Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9A5305C22329907D00BAB91F"
+               BuildableName = "MyMovieDBTests.xctest"
+               BlueprintName = "MyMovieDBTests"
+               ReferencedContainer = "container:MyMovieDB.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
@@ -42,7 +52,7 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Stage-Release"
+      buildConfiguration = "Stage-Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -65,7 +75,7 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Stage-Release"
+      buildConfiguration = "Stage-Debug"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -82,7 +92,7 @@
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Stage-Release">
+      buildConfiguration = "Stage-Debug">
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Stage-Release"

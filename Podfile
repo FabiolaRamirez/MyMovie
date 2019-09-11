@@ -17,4 +17,14 @@ pod 'Firebase/Analytics'
 
 end
 
+target 'MyMovieDBTests' do
+
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Alamofire', '4.8.2'
+
+end
+
+
 
