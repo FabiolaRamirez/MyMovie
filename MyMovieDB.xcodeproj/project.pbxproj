@@ -35,10 +35,14 @@
 		9A31247D230CA56600DC1967 /* MovieSavedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A31247B230CA56600DC1967 /* MovieSavedCell.swift */; };
 		9A31247E230CA56600DC1967 /* MovieSavedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A31247C230CA56600DC1967 /* MovieSavedCell.xib */; };
 		9A330E2D22E65384000D35E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A330E2C22E65384000D35E7 /* GoogleService-Info.plist */; };
+		9A425EAE232AA06500DEEB63 /* String+MyMovieDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2022BF7F22F77A3500CCAB73 /* String+MyMovieDB.swift */; };
 		9A5305C62329907D00BAB91F /* MyMovieDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5305C52329907D00BAB91F /* MyMovieDBTests.swift */; };
 		9A5F6265230D9399005EF85F /* MoviesSavedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F6264230D9399005EF85F /* MoviesSavedTableViewController.swift */; };
 		9A715532231F1F2000031FB5 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A715531231F1F2000031FB5 /* HomePresenter.swift */; };
 		9A715534231F271B00031FB5 /* AddMoviesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A715533231F271B00031FB5 /* AddMoviesPresenter.swift */; };
+		9A9BC1FE2329A62F00F9C1E3 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2022BF8322F793BE00CCAB73 /* Service.swift */; };
+		9A9BC1FF2329A77D00F9C1E3 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A5F35D22F9D98B00D6AE5C /* Movie.swift */; };
+		9A9BC2002329A79100F9C1E3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099962A22F7BFE5002D01F1 /* Constants.swift */; };
 		9AAF1B7822E21C6700CAEF42 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AAF1B7A22E21C6700CAEF42 /* User.storyboard */; };
 		9ACE0B0322E79CD000B37167 /* UIColor+MyMovieDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE0B0222E79CD000B37167 /* UIColor+MyMovieDB.swift */; };
 		9ACE0B0522E7A2C200B37167 /* UIFont+MyMovieDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE0B0422E7A2C200B37167 /* UIFont+MyMovieDB.swift */; };
@@ -516,6 +520,10 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -524,6 +532,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -606,6 +618,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A5305C62329907D00BAB91F /* MyMovieDBTests.swift in Sources */,
+				9A9BC1FE2329A62F00F9C1E3 /* Service.swift in Sources */,
+				9A9BC1FF2329A77D00F9C1E3 /* Movie.swift in Sources */,
+				9A425EAE232AA06500DEEB63 /* String+MyMovieDB.swift in Sources */,
+				9A9BC2002329A79100F9C1E3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

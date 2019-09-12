@@ -9,6 +9,7 @@
 import XCTest
 @testable import MyMovieDB
 
+
 class MyMovieDBTests: XCTestCase {
 
     override func setUp() {
@@ -19,9 +20,22 @@ class MyMovieDBTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testSearchSimpleMovie() {
+        let movieName = "matrix"
+        var movies: [Movie] = []
+        let expectation = XCTestExpectation(description: "Search movies by title")
+        Service.shared.getMoviesBy(title: movieName, success: { (response) in
+            if let moviesList = response.Search {
+                movies = moviesList
+            } else {
+                XCTFail()
+            }
+            expectation.fulfill()
+        }) { (error) in
+            XCTFail()
+        }
+        wait(for: [expectation], timeout: 15.0)
+        XCTAssertEqual(movies.count, 10)
     }
 
     func testPerformanceExample() {
