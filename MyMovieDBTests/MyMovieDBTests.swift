@@ -36,6 +36,20 @@ class MyMovieDBTests: XCTestCase {
         wait(for: [expectation], timeout: 15.0)
         XCTAssertEqual(movies.count, 10)
     }
+    
+    func testSearchById() {
+        let endGameIdMovie = "tt0415778"
+        var movie: Movie?
+        let expectation = XCTestExpectation(description: "Search movies by Id")
+        Service.shared.getDetailOfMovieBy(id: endGameIdMovie, success: { (response) in
+             movie = response
+            expectation.fulfill()
+        }) { (error) in
+            XCTFail()
+        }
+        wait(for: [expectation], timeout: 15.0)
+        XCTAssertEqual(movie?.Title, "End Game")
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
