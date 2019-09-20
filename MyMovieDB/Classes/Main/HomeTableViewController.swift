@@ -108,6 +108,7 @@ class HomeTableViewController: UITableViewController {
         searchMovies()
     }
     
+    //FIXME: We can move this to SearchMovie right? this is not the homevc responsability
     func cleanData() {
         SearchMovie.shared.movieTitles.removeAll()
         SearchMovie.shared.favoriteMovies1.removeAll()
@@ -120,8 +121,6 @@ class HomeTableViewController: UITableViewController {
     func searchMovies() {
         homePresenter?.searchMovies()
     }
-    
-    
     
     // MARK: - Table view data source
     

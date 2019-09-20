@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import SideMenu
 
+
+//TODO: Need to understand this protocol, instead of just calling the presenter.
 protocol MoviesSavedPresenterDelegate {
     func deleteMovie(movie: Movie)
     func getMovies() -> [Movie]

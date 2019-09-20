@@ -73,8 +73,6 @@ extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDele
         }
     }
     
-    
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellMovieIdentifier, for: indexPath) as! MovieCollectionViewCell
         var movie = Movie()
@@ -119,6 +117,8 @@ extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDele
                     titleSection = "\(SearchMovie.shared.movieTitles[indexPath.section]) (\(SearchMovie.shared.favoriteMovies1.count) coincidences)"
                 }
             } else {
+                
+                //FIXME: This can be refactored... you need a array and check if it's empty.. that's all
                 switch indexPath.section {
                 case 0:
                     if SearchMovie.shared.favoriteMovies1.isEmpty {

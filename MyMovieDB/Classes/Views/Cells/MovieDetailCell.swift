@@ -34,6 +34,7 @@ class MovieDetailCell: UITableViewCell {
     
     func initWithData(_ movie: Movie?) {
         
+        //FIXME: Let's not use wired strings.. we can have a struct with constants. this is even helpfull for localization. 
         genreTitleLabel.text = "Genre"
         genreLabel.text = movie?.Title ?? "None"
         languageLabel.text = movie?.Genre ?? "No Language"

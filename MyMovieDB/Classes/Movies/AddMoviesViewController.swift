@@ -79,6 +79,8 @@ class AddMoviesViewController: UIViewController {
         addMoviesPresenter?.searchMovies()
     }
     
+    //TODO: This can be moved to a UIViewController extension or parent to have it on all the views. I can
+    //show you how we handle it on a project.
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }

@@ -9,7 +9,7 @@
 import Foundation
 
 
-
+// TODO: Why class and not AnyObject?
 protocol AddMoviesProtocol: class {
     func taskFinished()
     func updateUIWhenTaskstarts()
@@ -17,6 +17,8 @@ protocol AddMoviesProtocol: class {
 
 class AddMoviesPresenter: AddMoviesPresenterDelegate {
     
+    
+    //TODO: we actually changed this to the right name according to the pattern. It should be view...not delegate
     weak var delegate: AddMoviesProtocol?
     
     init(delegate: AddMoviesProtocol) {
