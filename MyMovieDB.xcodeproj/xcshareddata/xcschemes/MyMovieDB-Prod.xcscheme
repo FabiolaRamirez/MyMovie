@@ -27,6 +27,15 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9AFEB8BE22E126FD008DA556"
+            BuildableName = "MyMovieDB.app"
+            BlueprintName = "MyMovieDB"
+            ReferencedContainer = "container:MyMovieDB.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -38,18 +47,17 @@
                ReferencedContainer = "container:MyMovieDB.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "203714F42337C83A005C1328"
+               BuildableName = "MyMovieDBUITests.xctest"
+               BlueprintName = "MyMovieDBUITests"
+               ReferencedContainer = "container:MyMovieDB.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9AFEB8BE22E126FD008DA556"
-            BuildableName = "MyMovieDB.app"
-            BlueprintName = "MyMovieDB"
-            ReferencedContainer = "container:MyMovieDB.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Prod-Release"
@@ -71,8 +79,6 @@
             ReferencedContainer = "container:MyMovieDB.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Prod-Release"
