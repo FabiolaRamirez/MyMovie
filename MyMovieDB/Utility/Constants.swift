@@ -17,3 +17,10 @@ struct URLs {
 struct ApiValue {
     static var ApiKey = "67753d27"
 }
+
+
+struct AccessibilityContants {
+    
+    static var emailTextFieldId = "emailTextFieldId"
+    static var passwordTextField = "passwordTextFieldId"
+}

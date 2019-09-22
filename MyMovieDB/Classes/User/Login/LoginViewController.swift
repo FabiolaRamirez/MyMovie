@@ -74,7 +74,8 @@ class LoginViewController: UIViewController {
         
         emailTextfield.attributedPlaceholder = NSAttributedString(string: "Enter email".localized, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         passwordTextfield.attributedPlaceholder = NSAttributedString(string: "Enter password".localized, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        
+        emailTextfield.accessibilityIdentifier = AccessibilityContants.emailTextFieldId
+        passwordTextfield.accessibilityIdentifier = AccessibilityContants.passwordTextField
     }
     
 }
