@@ -38,6 +38,7 @@ class HomeTableViewController: UITableViewController {
         if Auth.auth().currentUser == nil {
             DispatchQueue.main.async {
                 let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
+                vc.modalPresentationStyle = .overFullScreen
                 self.present(vc, animated: true, completion: nil)
             }
         }

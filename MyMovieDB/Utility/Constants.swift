@@ -23,4 +23,8 @@ struct AccessibilityContants {
     
     static var emailTextFieldId = "emailTextFieldId"
     static var passwordTextField = "passwordTextFieldId"
+    static var logInButtonId = "Log In"
+    static var signUpButtonId = "SignUpButtonId"
+    static var emailSignUpTextFieldId = "emailSignUpTextFieldId"
+    static var passwordSignUpTextFieldId = "passwordSignUpTextFieldId"
 }

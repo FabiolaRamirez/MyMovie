@@ -58,6 +58,7 @@ class LoginViewController: UIViewController {
 
     @IBAction func signup(_ sender: UIButton) {
         let vc: SignUpViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "signUpViewController") as! SignUpViewController
+        vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true, completion: nil)
     }
     

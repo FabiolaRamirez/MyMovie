@@ -79,6 +79,9 @@ class SignUpViewController: UIViewController {
         
         emailTextfield.attributedPlaceholder = NSAttributedString(string: "Enter".localized, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         passwordTextfield.attributedPlaceholder = NSAttributedString(string: "Enter".localized, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        emailTextfield.accessibilityIdentifier = AccessibilityContants.emailSignUpTextFieldId
+        passwordTextfield.accessibilityIdentifier = AccessibilityContants.passwordSignUpTextFieldId
+        signupButton.accessibilityIdentifier = AccessibilityContants.signUpButtonId
         
     }
     

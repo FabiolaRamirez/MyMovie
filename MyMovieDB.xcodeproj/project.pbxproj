@@ -17,6 +17,8 @@
 		202EC58523381C1F005DE381 /* LogInUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202EC58423381C1F005DE381 /* LogInUITests.swift */; };
 		202EC58823381C85005DE381 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202EC58723381C85005DE381 /* Extensions.swift */; };
 		202EC58923381CFF005DE381 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099962A22F7BFE5002D01F1 /* Constants.swift */; };
+		2036B3E12338253900345A9B /* SignUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2036B3E02338253900345A9B /* SignUpUITests.swift */; };
+		2036B3E323382D4400345A9B /* NavigationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2036B3E223382D4400345A9B /* NavigationUITests.swift */; };
 		204964CF22F4849500467465 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204964CE22F4849500467465 /* SideMenuTableViewController.swift */; };
 		204964D122F484A700467465 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204964D022F484A700467465 /* Menu.storyboard */; };
 		208BD1732308D54F005B6F22 /* RDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BD1722308D54F005B6F22 /* RDatabase.swift */; };
@@ -86,6 +88,8 @@
 		202EC58223381C0A005DE381 /* BaseStepsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStepsTests.swift; sourceTree = "<group>"; };
 		202EC58423381C1F005DE381 /* LogInUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInUITests.swift; sourceTree = "<group>"; };
 		202EC58723381C85005DE381 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2036B3E02338253900345A9B /* SignUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUITests.swift; sourceTree = "<group>"; };
+		2036B3E223382D4400345A9B /* NavigationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUITests.swift; sourceTree = "<group>"; };
 		204964CE22F4849500467465 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		204964D022F484A700467465 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		208BD1722308D54F005B6F22 /* RDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDatabase.swift; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 				202EC57823381A7E005DE381 /* Info.plist */,
 				202EC58223381C0A005DE381 /* BaseStepsTests.swift */,
 				202EC58423381C1F005DE381 /* LogInUITests.swift */,
+				2036B3E02338253900345A9B /* SignUpUITests.swift */,
+				2036B3E223382D4400345A9B /* NavigationUITests.swift */,
 			);
 			path = MyMovieUITests;
 			sourceTree = "<group>";
@@ -689,7 +695,9 @@
 				202EC58923381CFF005DE381 /* Constants.swift in Sources */,
 				202EC58523381C1F005DE381 /* LogInUITests.swift in Sources */,
 				202EC58323381C0A005DE381 /* BaseStepsTests.swift in Sources */,
+				2036B3E12338253900345A9B /* SignUpUITests.swift in Sources */,
 				202EC57723381A7E005DE381 /* MyMovieUITests.swift in Sources */,
+				2036B3E323382D4400345A9B /* NavigationUITests.swift in Sources */,
 				202EC58823381C85005DE381 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
