@@ -30,7 +30,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super .viewDidLoad()
-        self.signUpPresenter = SignUpPresenter(delegate: self)
+        self.signUpPresenter = SignUpPresenter(view: self)
         setupUI()
     }
     
@@ -79,6 +79,9 @@ class SignUpViewController: UIViewController {
         
         emailTextfield.attributedPlaceholder = NSAttributedString(string: "Enter".localized, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         passwordTextfield.attributedPlaceholder = NSAttributedString(string: "Enter".localized, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        emailTextfield.accessibilityIdentifier = AccessibilityContants.emailSignUpTextFieldId
+        passwordTextfield.accessibilityIdentifier = AccessibilityContants.passwordSignUpTextFieldId
+        signupButton.accessibilityIdentifier = AccessibilityContants.signUpButtonId
         
     }
     

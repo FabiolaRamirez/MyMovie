@@ -27,8 +27,6 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-      </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -38,8 +36,38 @@
             ReferencedContainer = "container:MyMovieDB.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
+      <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9A47F98223219F8100776E61"
+               BuildableName = "MyMovieDBTests.xctest"
+               BlueprintName = "MyMovieDBTests"
+               ReferencedContainer = "container:MyMovieDB.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "203714F42337C83A005C1328"
+               BuildableName = "MyMovieDBUITests.xctest"
+               BlueprintName = "MyMovieDBUITests"
+               ReferencedContainer = "container:MyMovieDB.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "202EC57323381A7E005DE381"
+               BuildableName = "MyMovieUITests.xctest"
+               BlueprintName = "MyMovieUITests"
+               ReferencedContainer = "container:MyMovieDB.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Dev-Release"
@@ -61,8 +89,6 @@
             ReferencedContainer = "container:MyMovieDB.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Dev-Release"

@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         setData()
         tableView.register(UINib.init(nibName: "MovieDetailCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        self.detailMoviePresenter = DetailMoviePresenter(delegate: self)
+        self.detailMoviePresenter = DetailMoviePresenter(view: self)
         if isItemForDeletingState {
             saveOrDeleteItem.title = "Delete".localized
             saveOrDeleteItem.tintColor = .red

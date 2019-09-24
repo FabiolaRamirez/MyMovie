@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-protocol SignUpProtocol: class {
+protocol SignUpProtocol: AnyObject {
     func registerSuccessful()
     func signUpError(message: String)
     func startActivityIndicator()
@@ -18,18 +18,18 @@ protocol SignUpProtocol: class {
 
 class SignUpPresenter: SignUpPresenterDelegate {
     
-    weak var delegate: SignUpProtocol?
+    weak var view: SignUpProtocol?
     
-    init(delegate: SignUpProtocol) {
-        self.delegate = delegate
+    init(view: SignUpProtocol) {
+        self.view = view
     }
     
     func registerUser(email: String, password: String) {
-        delegate?.startActivityIndicator()
+        view?.startActivityIndicator()
         Auth.auth().createUser(withEmail: email, password: password, completion: {(result, error) in
-            self.delegate?.stopActivityIndicator()
+            self.view?.stopActivityIndicator()
             if let error = error {
-                self.delegate?.signUpError(message: "ErrorMessage".localized)
+                self.view?.signUpError(message: "ErrorMessage".localized)
                 print("Failed to sign user up: \(error.localizedDescription)")
                 return
             }
@@ -42,7 +42,7 @@ class SignUpPresenter: SignUpPresenterDelegate {
                     print("Failed to update database values: \(error.localizedDescription)")
                     return
                 }
-                self.delegate?.registerSuccessful()
+                self.view?.registerSuccessful()
             })
             
         })

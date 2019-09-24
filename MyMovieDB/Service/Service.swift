@@ -14,7 +14,7 @@ class Service {
     static let shared = Service()
     
     
-    func getMoviesBy(title: String, success: @escaping (MoviesResponse) -> Void, error: @escaping (ErrorResponse) -> Void) {
+    func getMoviesBy(title: String, success: @escaping (MoviesResponse) -> Void, failure: @escaping (ErrorResponse) -> Void) {
         let url = "\(URLs.BaseUrl)/?apikey=\(ApiValue.ApiKey)&s=\(title)"
         
         Alamofire.request(url).responseData { response in
@@ -23,11 +23,12 @@ class Service {
                     let dataResponse = try JSONDecoder().decode(MoviesResponse.self, from: data)
                     success(dataResponse)
                 } catch {
-                    
+                    let errorResponse = ErrorResponse(message: error.localizedDescription)
+                    failure(errorResponse)
                 }
             } else {
                 let errorResponse = ErrorResponse(message: "Something went wrong")
-                error(errorResponse)
+                failure(errorResponse)
             }
         }
     }
@@ -99,7 +100,7 @@ class Service {
         }
     }
     
-    func getDetailOfMovieBy(id: String, success: @escaping (Movie) -> Void, error: @escaping (ErrorResponse) -> Void) {
+    func getDetailOfMovieBy(id: String, success: @escaping (Movie) -> Void, failure: @escaping (ErrorResponse) -> Void) {
         let url = "\(URLs.BaseUrl)/?i=\(id)&apikey=\(ApiValue.ApiKey)"
         Alamofire.request(url).responseData { response in
             if let data = response.result.value {
@@ -107,11 +108,12 @@ class Service {
                     let dataResponse = try JSONDecoder().decode(Movie.self, from: data)
                     success(dataResponse)
                 } catch {
-                    
+                    let errorResponse = ErrorResponse(message: error.localizedDescription)
+                    failure(errorResponse)
                 }
             } else {
                 let errorResponse = ErrorResponse(message: "ErrorMovieDetail".localized)
-                error(errorResponse)
+                failure(errorResponse)
             }
         }
     }

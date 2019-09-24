@@ -9,23 +9,23 @@
 import Foundation
 
 
-protocol HomeProtocol: class {
+protocol HomeProtocol: AnyObject {
     func taskFinished()
     func updateUIWhenTaskstarts()
 }
 
 class HomePresenter: HomePresenterDelegate {
     
-    weak var delegate: HomeProtocol?
+    weak var view: HomeProtocol?
     
-    init(delegate: HomeProtocol) {
-        self.delegate = delegate
+    init(view: HomeProtocol) {
+        self.view = view
     }
     
     func searchMovies() {
-        delegate?.updateUIWhenTaskstarts()
+        view?.updateUIWhenTaskstarts()
         Service.shared.searchMovies {
-            self.delegate?.taskFinished()
+            self.view?.taskFinished()
         }
     }
     

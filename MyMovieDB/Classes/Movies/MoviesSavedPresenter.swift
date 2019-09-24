@@ -8,21 +8,21 @@
 
 import Foundation
 
-protocol MovieSavedProtocol: class {
+protocol MovieSavedProtocol: AnyObject {
     func successfullyMovieDeleted()
 }
 
 class MoviesSavedPresenter: MoviesSavedPresenterDelegate {
     
-    weak var delegate: MovieSavedProtocol?
+    weak var view: MovieSavedProtocol?
     
-    init(delegate: MovieSavedProtocol) {
-        self.delegate = delegate
+    init(view: MovieSavedProtocol) {
+        self.view = view
     }
     
     func deleteMovie(movie: Movie) {
         RDatabase.deleteMovie(movie)
-        delegate?.successfullyMovieDeleted()
+        view?.successfullyMovieDeleted()
     }
     
     func getMovies() -> [Movie] {

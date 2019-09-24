@@ -34,12 +34,12 @@ class MovieDetailCell: UITableViewCell {
     
     func initWithData(_ movie: Movie?) {
         
-        genreTitleLabel.text = "Genre"
-        genreLabel.text = movie?.Title ?? "None"
-        languageLabel.text = movie?.Genre ?? "No Language"
-        yearLabel.text = movie?.Year ?? "No Year"
-        ratingTitleLabel.text = "Rate"
-        ratingLabel.text = movie?.imdbRating ?? "None"
+        genreTitleLabel.text = MovieLabels.genre
+        genreLabel.text = movie?.Title ?? MovieLabels.none
+        languageLabel.text = movie?.Genre ?? MovieLabels.noLanguage
+        yearLabel.text = movie?.Year ?? MovieLabels.noYear
+        ratingTitleLabel.text = MovieLabels.rate
+        ratingLabel.text = movie?.imdbRating ?? MovieLabels.none
         plotLabel.text = movie?.Plot ?? ""
         
         if let poster = movie?.Poster {

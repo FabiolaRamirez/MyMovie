@@ -3,7 +3,6 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'MyMovieDB' do
-
 pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
@@ -16,5 +15,12 @@ pod 'Crashlytics', '~> 3.14.0'
 pod 'Firebase/Analytics'
 
 end
+
+target 'MyMovieDBTests' do
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Alamofire', '4.8.2'
+  end
 
 

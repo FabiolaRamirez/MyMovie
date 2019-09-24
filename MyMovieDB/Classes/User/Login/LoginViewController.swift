@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super .viewDidLoad()
-        self.loginPresenter = LoginPresenter(delegate: self)
+        self.loginPresenter = LoginPresenter(view: self)
         setupUI()
     }
     
@@ -58,6 +58,7 @@ class LoginViewController: UIViewController {
 
     @IBAction func signup(_ sender: UIButton) {
         let vc: SignUpViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "signUpViewController") as! SignUpViewController
+        vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -74,7 +75,8 @@ class LoginViewController: UIViewController {
         
         emailTextfield.attributedPlaceholder = NSAttributedString(string: "Enter email".localized, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         passwordTextfield.attributedPlaceholder = NSAttributedString(string: "Enter password".localized, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        
+        emailTextfield.accessibilityIdentifier = AccessibilityContants.emailTextFieldId
+        passwordTextfield.accessibilityIdentifier = AccessibilityContants.passwordTextField
     }
     
 }

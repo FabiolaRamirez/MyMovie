@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MovieDetailProtocol: class {
+protocol MovieDetailProtocol: AnyObject {
     func movieAlreadyExist()
     func movieCanBeSaved()
     func successfullyMovieDeleted()
@@ -16,10 +16,10 @@ protocol MovieDetailProtocol: class {
 
 class DetailMoviePresenter: DetailMoviePresenterDelegate {
     
-    weak var delegate: MovieDetailProtocol?
+    weak var view: MovieDetailProtocol?
     
-    init(delegate: MovieDetailProtocol) {
-        self.delegate = delegate
+    init(view: MovieDetailProtocol) {
+        self.view = view
     }
     
     func saveMovie(movie: Movie) {
@@ -28,15 +28,15 @@ class DetailMoviePresenter: DetailMoviePresenterDelegate {
     
     func existMovie(movie: Movie) {
         if !RDatabase.exist(movie) {
-            delegate?.movieCanBeSaved()
+            view?.movieCanBeSaved()
         } else {
-            delegate?.movieAlreadyExist()
+            view?.movieAlreadyExist()
         }
     }
     
     func deleteMovie(movie: Movie) {
         RDatabase.deleteMovie(movie)
-        delegate?.successfullyMovieDeleted()
+        view?.successfullyMovieDeleted()
     }
 
 }

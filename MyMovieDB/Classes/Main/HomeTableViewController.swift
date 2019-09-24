@@ -38,6 +38,7 @@ class HomeTableViewController: UITableViewController {
         if Auth.auth().currentUser == nil {
             DispatchQueue.main.async {
                 let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
+                vc.modalPresentationStyle = .overFullScreen
                 self.present(vc, animated: true, completion: nil)
             }
         }
@@ -64,12 +65,12 @@ class HomeTableViewController: UITableViewController {
         view.addGestureRecognizer(tap)
         self.navigationItem.title = "Home".localized
         searchButton.setTitle("Search".localized,for: .normal)
-        self.homePresenter = HomePresenter(delegate: self)
+        self.homePresenter = HomePresenter(view: self)
     }
     
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
+        hideKeyboard()
     }
     
     @IBAction func showMenu(_ sender: UIBarButtonItem) {
@@ -87,7 +88,7 @@ class HomeTableViewController: UITableViewController {
             showSimpleAlert(title: "", message: "Please, Enter five movies!".localized)
             return
         }
-        cleanData()
+        SearchMovie.shared.cleanData()
         
         if let movieName = movieTextField1?.text, !movieName.isEmpty {
             SearchMovie.shared.movieTitles.append(movieName)
@@ -106,15 +107,6 @@ class HomeTableViewController: UITableViewController {
         }
         
         searchMovies()
-    }
-    
-    func cleanData() {
-        SearchMovie.shared.movieTitles.removeAll()
-        SearchMovie.shared.favoriteMovies1.removeAll()
-        SearchMovie.shared.favoriteMovies2.removeAll()
-        SearchMovie.shared.favoriteMovies3.removeAll()
-        SearchMovie.shared.favoriteMovies4.removeAll()
-        SearchMovie.shared.favoriteMovies4.removeAll()
     }
     
     func searchMovies() {
