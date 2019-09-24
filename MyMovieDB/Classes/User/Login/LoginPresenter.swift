@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-protocol LoginProtocol: class {
+protocol LoginProtocol: AnyObject {
     func loginSuccessful()
     func loginError(message: String)
     func startActivityIndicator()
@@ -18,22 +18,22 @@ protocol LoginProtocol: class {
 
 class LoginPresenter: LoginPresenterDelegate {
     
-   weak var delegate: LoginProtocol?
+   weak var view: LoginProtocol?
     
-    init(delegate: LoginProtocol) {
-        self.delegate = delegate
+    init(view: LoginProtocol) {
+        self.view = view
     }
     
     func loginUser(email: String, password: String) {
-        delegate?.startActivityIndicator()
+        view?.startActivityIndicator()
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            self.delegate?.stopActivityIndicator()
+            self.view?.stopActivityIndicator()
             if let error = error {
-                self.delegate?.loginError(message: "ErrorMessage".localized)
+                self.view?.loginError(message: "ErrorMessage".localized)
                 print("Failed to sign in user: \(error.localizedDescription)")
                 return
             }
-            self.delegate?.loginSuccessful()
+            self.view?.loginSuccessful()
         }
     }
     

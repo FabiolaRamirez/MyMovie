@@ -30,7 +30,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super .viewDidLoad()
-        self.signUpPresenter = SignUpPresenter(delegate: self)
+        self.signUpPresenter = SignUpPresenter(view: self)
         setupUI()
     }
     

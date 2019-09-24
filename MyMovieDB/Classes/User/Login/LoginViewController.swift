@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super .viewDidLoad()
-        self.loginPresenter = LoginPresenter(delegate: self)
+        self.loginPresenter = LoginPresenter(view: self)
         setupUI()
     }
     

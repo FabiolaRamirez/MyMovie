@@ -37,7 +37,7 @@ class AddMoviesViewController: UIViewController {
         view.addGestureRecognizer(tap)
         self.navigationItem.title = "Add More Movies".localized
         searchButton.setTitle("Search".localized,for: .normal)
-        self.addMoviesPresenter = AddMoviesPresenter(delegate: self)
+        self.addMoviesPresenter = AddMoviesPresenter(view: self)
     }
 
     // MARK: - Validations

@@ -10,23 +10,23 @@ import Foundation
 
 
 
-protocol AddMoviesProtocol: class {
+protocol AddMoviesProtocol: AnyObject {
     func taskFinished()
     func updateUIWhenTaskstarts()
 }
 
 class AddMoviesPresenter: AddMoviesPresenterDelegate {
     
-    weak var delegate: AddMoviesProtocol?
+    weak var view: AddMoviesProtocol?
     
-    init(delegate: AddMoviesProtocol) {
-        self.delegate = delegate
+    init(view: AddMoviesProtocol) {
+        self.view = view
     }
     
     func searchMovies() {
-        delegate?.updateUIWhenTaskstarts()
+        view?.updateUIWhenTaskstarts()
         Service.shared.getMoviesOneSearch {
-            self.delegate?.taskFinished()
+            self.view?.taskFinished()
         }
     }
     

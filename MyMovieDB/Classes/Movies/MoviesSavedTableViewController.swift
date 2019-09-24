@@ -26,7 +26,7 @@ class MoviesSavedTableViewController: UITableViewController {
         tableView.register(UINib.init(nibName: "MovieSavedCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         self.navigationItem.title = "Home".localized
         settingMenu()
-        self.moviesSavedPresenter = MoviesSavedPresenter(delegate: self)
+        self.moviesSavedPresenter = MoviesSavedPresenter(view: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {

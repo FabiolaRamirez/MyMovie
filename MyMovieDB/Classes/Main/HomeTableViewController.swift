@@ -65,7 +65,7 @@ class HomeTableViewController: UITableViewController {
         view.addGestureRecognizer(tap)
         self.navigationItem.title = "Home".localized
         searchButton.setTitle("Search".localized,for: .normal)
-        self.homePresenter = HomePresenter(delegate: self)
+        self.homePresenter = HomePresenter(view: self)
     }
     
     @objc func dismissKeyboard() {
