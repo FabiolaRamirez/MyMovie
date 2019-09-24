@@ -80,7 +80,7 @@ class AddMoviesViewController: UIViewController {
     }
     
     @objc func dismissKeyboard() {
-        view.endEditing(true)
+        hideKeyboard()
     }
     
 }

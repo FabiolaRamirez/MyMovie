@@ -70,7 +70,7 @@ class HomeTableViewController: UITableViewController {
     
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
+        hideKeyboard()
     }
     
     @IBAction func showMenu(_ sender: UIBarButtonItem) {
@@ -88,7 +88,7 @@ class HomeTableViewController: UITableViewController {
             showSimpleAlert(title: "", message: "Please, Enter five movies!".localized)
             return
         }
-        cleanData()
+        SearchMovie.shared.cleanData()
         
         if let movieName = movieTextField1?.text, !movieName.isEmpty {
             SearchMovie.shared.movieTitles.append(movieName)
@@ -107,15 +107,6 @@ class HomeTableViewController: UITableViewController {
         }
         
         searchMovies()
-    }
-    
-    func cleanData() {
-        SearchMovie.shared.movieTitles.removeAll()
-        SearchMovie.shared.favoriteMovies1.removeAll()
-        SearchMovie.shared.favoriteMovies2.removeAll()
-        SearchMovie.shared.favoriteMovies3.removeAll()
-        SearchMovie.shared.favoriteMovies4.removeAll()
-        SearchMovie.shared.favoriteMovies4.removeAll()
     }
     
     func searchMovies() {

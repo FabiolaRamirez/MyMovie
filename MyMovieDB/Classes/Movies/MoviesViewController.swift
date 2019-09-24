@@ -113,43 +113,19 @@ extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDele
         if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerViewIdentifier", for: indexPath) as? RecipeCollectionReusableView {
             var titleSection = ""
             if simpleSearch {
-                if SearchMovie.shared.favoriteMovies1.isEmpty {
-                    titleSection = "\(SearchMovie.shared.movieTitles[indexPath.section]) Not Found"
-                } else {
-                    titleSection = "\(SearchMovie.shared.movieTitles[indexPath.section]) (\(SearchMovie.shared.favoriteMovies1.count) coincidences)"
-                }
+                titleSection = validateArrayForTitle(array: SearchMovie.shared.favoriteMovies1, section: indexPath.section)
             } else {
                 switch indexPath.section {
                 case 0:
-                    if SearchMovie.shared.favoriteMovies1.isEmpty {
-                        titleSection = "\(SearchMovie.shared.movieTitles[indexPath.section]) Not Found"
-                    } else {
-                        titleSection = "\(SearchMovie.shared.movieTitles[indexPath.section]) (\(SearchMovie.shared.favoriteMovies1.count) coincidences)"
-                    }
+                    titleSection = validateArrayForTitle(array: SearchMovie.shared.favoriteMovies1, section: indexPath.section)
                 case 1:
-                    if SearchMovie.shared.favoriteMovies2.isEmpty {
-                        titleSection = "\(SearchMovie.shared.movieTitles[indexPath.section]) Not Found"
-                    } else {
-                        titleSection = "\(SearchMovie.shared.movieTitles[indexPath.section]) (\(SearchMovie.shared.favoriteMovies2.count) coincidences)"
-                    }
+                    titleSection = validateArrayForTitle(array: SearchMovie.shared.favoriteMovies2, section: indexPath.section)
                 case 2:
-                    if SearchMovie.shared.favoriteMovies3.isEmpty {
-                        titleSection = "\(SearchMovie.shared.movieTitles[indexPath.section]) Not Found"
-                    } else {
-                        titleSection = "\(SearchMovie.shared.movieTitles[indexPath.section]) (\(SearchMovie.shared.favoriteMovies3.count) coincidences)"
-                    }
+                    titleSection = validateArrayForTitle(array: SearchMovie.shared.favoriteMovies3, section: indexPath.section)
                 case 3:
-                    if SearchMovie.shared.favoriteMovies4.isEmpty {
-                        titleSection = "\(SearchMovie.shared.movieTitles[indexPath.section]) Not Found"
-                    } else {
-                        titleSection = "\(SearchMovie.shared.movieTitles[indexPath.section]) (\(SearchMovie.shared.favoriteMovies4.count) coincidences)"
-                    }
+                    titleSection = validateArrayForTitle(array: SearchMovie.shared.favoriteMovies4, section: indexPath.section)
                 case 4:
-                    if SearchMovie.shared.favoriteMovies5.isEmpty {
-                        titleSection = "\(SearchMovie.shared.movieTitles[indexPath.section]) Not Found"
-                    } else {
-                        titleSection = "\(SearchMovie.shared.movieTitles[indexPath.section]) (\(SearchMovie.shared.favoriteMovies5.count) coincidences)"
-                    }
+                    titleSection = validateArrayForTitle(array: SearchMovie.shared.favoriteMovies5, section: indexPath.section)
                 default: break
                 }
             }
@@ -157,6 +133,16 @@ extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDele
             return sectionHeader
         }
         return UICollectionReusableView()
+    }
+    
+    func validateArrayForTitle(array: [Movie], section: Int) -> String {
+        var titleSection = ""
+        if array.isEmpty {
+            titleSection = "\(SearchMovie.shared.movieTitles[section]) Not Found"
+        } else {
+            titleSection = "\(SearchMovie.shared.movieTitles[section]) (\(array.count) coincidences)"
+        }
+        return titleSection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

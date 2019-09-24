@@ -19,6 +19,17 @@ class SearchMovie {
     var favoriteMovies3: [Movie] = []
     var favoriteMovies4: [Movie] = []
     var favoriteMovies5: [Movie] = []
+    
+    
+    func cleanData() {
+        SearchMovie.shared.movieTitles.removeAll()
+        SearchMovie.shared.favoriteMovies1.removeAll()
+        SearchMovie.shared.favoriteMovies2.removeAll()
+        SearchMovie.shared.favoriteMovies3.removeAll()
+        SearchMovie.shared.favoriteMovies4.removeAll()
+        SearchMovie.shared.favoriteMovies4.removeAll()
+    }
+    
 }
 
 
