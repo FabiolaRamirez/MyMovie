@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,16 +17,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter movie" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJx-J7-KtD">
-                                <rect key="frame" x="16" y="88" width="382" height="30"/>
+                                <rect key="frame" x="16" y="68" width="382" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="N5O-VP-KEQ"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="search"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7S-RI-Zjs">
-                                <rect key="frame" x="16" y="142" width="382" height="44"/>
+                                <rect key="frame" x="16" y="122" width="382" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="3Hx-mm-Qx0"/>
                                 </constraints>
@@ -38,7 +35,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6jO-y9-A8Y">
-                                <rect key="frame" x="192" y="149" width="30" height="30"/>
+                                <rect key="frame" x="192" y="129" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="HPV-lw-Qt1"/>
                                     <constraint firstAttribute="width" constant="30" id="mJB-dL-vRY"/>
@@ -59,7 +56,7 @@
                         <viewLayoutGuide key="safeArea" id="16e-az-yay"/>
                     </view>
                     <navigationItem key="navigationItem" id="aIO-6h-nZL">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="FSn-9E-y94">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="FSn-9E-y94">
                             <connections>
                                 <action selector="showMenu:" destination="pZl-DI-Q1T" id="Z22-K8-jHb"/>
                             </connections>
@@ -170,7 +167,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="OPc-Vj-qRE">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="fJN-23-HAw" id="0JO-7x-HY5"/>
@@ -230,7 +227,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="fad-U6-uE0">
                         <barButtonItem key="backBarButtonItem" title="Home" id="shf-IX-oyL"/>
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="bAH-KV-nZK">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="bAH-KV-nZK">
                             <connections>
                                 <action selector="showMenu:" destination="Kcy-10-cxc" id="b33-WZ-FBL"/>
                             </connections>
@@ -248,4 +245,7 @@
             <point key="canvasLocation" x="3236" y="120"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menu" width="25" height="25"/>
+    </resources>
 </document>

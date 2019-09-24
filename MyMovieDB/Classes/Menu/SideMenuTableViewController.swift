@@ -44,7 +44,8 @@ class SideMenuTableViewController: UIViewController {
     }
     
     func settup() {
-        tableView.backgroundColor = .white
+        view.backgroundColor = .lightGrayBackgroundColor
+        tableView.backgroundColor = .lightGrayBackgroundColor
         versionLabel.isHidden = true
         #if DEV
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0"
@@ -109,7 +110,7 @@ extension SideMenuTableViewController: UITableViewDelegate, UITableViewDataSourc
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: menuCellIdentifier) {
             cell.textLabel?.text = option.name
-            
+            cell.contentView.backgroundColor = .lightGrayBackgroundColor
             return cell
         }
         

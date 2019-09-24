@@ -64,8 +64,9 @@ class HomeTableViewController: UITableViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         self.navigationItem.title = "Home".localized
-        searchButton.setTitle("Search".localized,for: .normal)
         self.homePresenter = HomePresenter(view: self)
+        view.backgroundColor = .lightGrayBackgroundColor
+        searchButton.setPrimaryTheme(title: "Search".localized)
     }
     
     @objc func dismissKeyboard() {
@@ -127,6 +128,10 @@ class HomeTableViewController: UITableViewController {
         } else {
             return 1
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.contentView.backgroundColor = .lightGrayBackgroundColor
     }
 }
 

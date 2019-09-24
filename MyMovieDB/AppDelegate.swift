@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController(rootViewController: initialViewController())
         window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
-        
+        self.window?.tintColor = .orangePrimary
         //crashlytics
         Fabric.sharedSDK().debug = true
         
