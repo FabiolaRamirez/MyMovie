@@ -57,5 +57,9 @@ class MyMovieDBTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testBaseUrl() {
+        XCTAssertEqual(URLs.BaseUrl, "https://www.omdbapi.com")
+    }
 
 }
