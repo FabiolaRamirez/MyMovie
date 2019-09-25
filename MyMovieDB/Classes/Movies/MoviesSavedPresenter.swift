@@ -8,6 +8,11 @@
 
 import Foundation
 
+protocol MoviesSavedPresenterDelegate {
+    func deleteMovie(movie: Movie)
+    func getMovies() -> [Movie]
+}
+
 protocol MovieSavedProtocol: AnyObject {
     func successfullyMovieDeleted()
 }

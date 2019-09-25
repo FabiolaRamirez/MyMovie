@@ -8,7 +8,9 @@
 
 import Foundation
 
-
+protocol AddMoviesPresenterDelegate {
+    func searchMovies()
+}
 
 protocol AddMoviesProtocol: AnyObject {
     func taskFinished()

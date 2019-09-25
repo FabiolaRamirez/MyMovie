@@ -9,6 +9,10 @@
 import Foundation
 import Firebase
 
+protocol LoginPresenterDelegate {
+    func loginUser(email: String, password: String)
+}
+
 protocol LoginProtocol: AnyObject {
     func loginSuccessful()
     func loginError(message: String)

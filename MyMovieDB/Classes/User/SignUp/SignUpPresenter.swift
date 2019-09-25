@@ -9,6 +9,10 @@
 import Foundation
 import Firebase
 
+protocol SignUpPresenterDelegate {
+    func registerUser(email: String, password: String)
+}
+
 protocol SignUpProtocol: AnyObject {
     func registerSuccessful()
     func signUpError(message: String)

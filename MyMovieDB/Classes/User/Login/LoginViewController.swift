@@ -9,10 +9,6 @@
 import Foundation
 import UIKit
 
-protocol LoginPresenterDelegate {
-    func loginUser(email: String, password: String)
-}
-
 
 class LoginViewController: UIViewController {
     

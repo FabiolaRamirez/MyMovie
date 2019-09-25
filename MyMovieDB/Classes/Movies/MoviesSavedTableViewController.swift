@@ -10,11 +10,6 @@ import UIKit
 import Firebase
 import SideMenu
 
-protocol MoviesSavedPresenterDelegate {
-    func deleteMovie(movie: Movie)
-    func getMovies() -> [Movie]
-}
-
 class MoviesSavedTableViewController: UITableViewController {
 
     let cellIdentifier = "movieSavedCell"

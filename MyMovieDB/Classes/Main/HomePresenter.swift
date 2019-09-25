@@ -8,6 +8,9 @@
 
 import Foundation
 
+protocol HomePresenterDelegate {
+    func searchMovies()
+}
 
 protocol HomeProtocol: AnyObject {
     func taskFinished()

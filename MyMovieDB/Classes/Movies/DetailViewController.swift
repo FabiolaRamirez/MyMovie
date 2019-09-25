@@ -8,12 +8,6 @@
 
 import UIKit
 
-protocol DetailMoviePresenterDelegate {
-    func saveMovie(movie: Movie)
-    func existMovie(movie: Movie)
-    func deleteMovie(movie: Movie)
-}
-
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!

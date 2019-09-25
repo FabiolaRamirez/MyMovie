@@ -10,9 +10,6 @@ import Foundation
 import UIKit
 import Firebase
 
-protocol SignUpPresenterDelegate {
-    func registerUser(email: String, password: String)
-}
 
 class SignUpViewController: UIViewController {
     

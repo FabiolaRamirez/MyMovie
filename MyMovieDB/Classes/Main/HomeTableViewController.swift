@@ -11,10 +11,6 @@ import Firebase
 import SideMenu
 import Crashlytics
 
-protocol HomePresenterDelegate {
-    func searchMovies()
-}
-
 class HomeTableViewController: UITableViewController {
     
     @IBOutlet weak var movieTextField1: UITextField!

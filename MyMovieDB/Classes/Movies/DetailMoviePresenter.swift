@@ -8,6 +8,12 @@
 
 import Foundation
 
+protocol DetailMoviePresenterDelegate {
+    func saveMovie(movie: Movie)
+    func existMovie(movie: Movie)
+    func deleteMovie(movie: Movie)
+}
+
 protocol MovieDetailProtocol: AnyObject {
     func movieAlreadyExist()
     func movieCanBeSaved()

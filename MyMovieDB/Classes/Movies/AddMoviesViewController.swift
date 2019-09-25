@@ -10,10 +10,6 @@ import UIKit
 import Firebase
 import SideMenu
 
-protocol AddMoviesPresenterDelegate {
-    func searchMovies()
-}
-
 class AddMoviesViewController: UIViewController {
 
     @IBOutlet weak var movieTextField: UITextField!
