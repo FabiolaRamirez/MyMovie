@@ -36,7 +36,7 @@ class AddMoviesViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         self.navigationItem.title = "Add More Movies".localized
-        searchButton.setTitle("Search".localized,for: .normal)
+        searchButton.setPrimaryTheme(title: "Search".localized)
         self.addMoviesPresenter = AddMoviesPresenter(view: self)
     }
 

@@ -23,7 +23,14 @@ class MovieDetailCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        genreTitleLabel.font = UIFont.neueMedium(14)
+        genreLabel.font = UIFont.neueRegular(14)
+        genreLabel.textColor = .grayRegular
+        languageLabel.font = UIFont.neueMedium(14)
+        yearLabel.font = UIFont.neueMedium(14)
+        ratingTitleLabel.font = UIFont.neueMedium(14)
+        ratingLabel.font = UIFont.neueRegular(14)
+        ratingLabel.textColor = .grayRegular
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,7 +40,6 @@ class MovieDetailCell: UITableViewCell {
     }
     
     func initWithData(_ movie: Movie?) {
-        
         genreTitleLabel.text = MovieLabels.genre
         genreLabel.text = movie?.Title ?? MovieLabels.none
         languageLabel.text = movie?.Genre ?? MovieLabels.noLanguage

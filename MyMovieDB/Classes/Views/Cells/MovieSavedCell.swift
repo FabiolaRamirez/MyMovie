@@ -17,7 +17,8 @@ class MovieSavedCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        yearLabel.font = UIFont.neueRegular(17)
+        yearLabel.textColor = .grayRegular
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

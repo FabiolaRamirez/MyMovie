@@ -13,13 +13,19 @@ extension UIColor {
     
     static var orangePrimary: UIColor {
         get{
-            return UIColor.init(rgb: 0xff9800)
+            return UIColor.init(rgb: 0xffb300)
         }
     }
     
     static var orangeLight: UIColor {
         get{
             return UIColor.init(rgb: 0xffc947)
+        }
+    }
+    
+    static var orangeExtraLight: UIColor {
+        get{
+            return UIColor.init(rgb: 0xfff3e0)
         }
     }
     

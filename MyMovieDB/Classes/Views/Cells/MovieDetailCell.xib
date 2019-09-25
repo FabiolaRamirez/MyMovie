@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="176"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="175.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="176"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UsS-ib-xty">
@@ -32,7 +30,7 @@
                             <constraint firstAttribute="width" constant="48" id="5Ii-ki-TX8"/>
                             <constraint firstAttribute="height" constant="21" id="oal-Bp-yWu"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -41,16 +39,16 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="n2t-zC-wKz"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CrH-Og-TDh">
-                        <rect key="frame" x="114" y="62" width="198" height="21"/>
+                        <rect key="frame" x="114" y="62" width="173" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="f2M-gB-hu3"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -60,12 +58,12 @@
                             <constraint firstAttribute="width" constant="49" id="NMT-lJ-mmb"/>
                             <constraint firstAttribute="height" constant="21" id="qTM-yf-bIC"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0z-uR-4M1">
-                        <rect key="frame" x="16" y="123" width="296" height="36.5"/>
+                        <rect key="frame" x="16" y="123" width="296" height="37"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,7 +73,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="lMs-wo-PUy"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -84,13 +82,21 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="SS7-tb-D6e"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="Obt-84-Gtd">
+                        <rect key="frame" x="295" y="64" width="17" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="17" id="Fof-cU-YTI"/>
+                            <constraint firstAttribute="height" constant="17" id="mPl-de-xzR"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="NWh-NP-Xh6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="0iU-fZ-1iU"/>
+                    <constraint firstItem="Obt-84-Gtd" firstAttribute="top" secondItem="nYW-Hp-x7d" secondAttribute="bottom" constant="4" id="0ly-0G-Yf7"/>
                     <constraint firstAttribute="trailing" secondItem="b0z-uR-4M1" secondAttribute="trailing" constant="8" id="0v4-iD-K5d"/>
                     <constraint firstItem="XGk-ur-TZ2" firstAttribute="leading" secondItem="tQ0-Fq-Oqf" secondAttribute="trailing" constant="8" id="3Dj-3f-Ncc"/>
                     <constraint firstAttribute="bottom" secondItem="b0z-uR-4M1" secondAttribute="bottom" constant="16" id="3iU-3D-Xrd"/>
@@ -101,8 +107,8 @@
                     <constraint firstItem="CrH-Og-TDh" firstAttribute="leading" secondItem="UsS-ib-xty" secondAttribute="trailing" constant="8" id="EqH-HI-io7"/>
                     <constraint firstItem="nYW-Hp-x7d" firstAttribute="leading" secondItem="UsS-ib-xty" secondAttribute="trailing" constant="8" id="Glc-B1-Xun"/>
                     <constraint firstItem="JL9-k1-lYH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Rr9-Zl-JB5"/>
+                    <constraint firstAttribute="trailing" secondItem="Obt-84-Gtd" secondAttribute="trailing" constant="8" id="UHW-l1-wHw"/>
                     <constraint firstItem="NWh-NP-Xh6" firstAttribute="leading" secondItem="UsS-ib-xty" secondAttribute="trailing" constant="8" id="WhG-kA-F6K"/>
-                    <constraint firstAttribute="trailing" secondItem="CrH-Og-TDh" secondAttribute="trailing" constant="8" id="YTf-2a-DmY"/>
                     <constraint firstItem="b0z-uR-4M1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bcE-Hj-iZN"/>
                     <constraint firstItem="UsS-ib-xty" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="dIa-6I-ePf"/>
                     <constraint firstItem="nYW-Hp-x7d" firstAttribute="top" secondItem="NWh-NP-Xh6" secondAttribute="bottom" constant="2" id="ftR-bm-Va8"/>
@@ -112,6 +118,7 @@
                     <constraint firstItem="tQ0-Fq-Oqf" firstAttribute="leading" secondItem="UsS-ib-xty" secondAttribute="trailing" constant="8" id="rhe-qy-2SW"/>
                     <constraint firstItem="b0z-uR-4M1" firstAttribute="top" secondItem="tQ0-Fq-Oqf" secondAttribute="bottom" constant="16" id="x7Z-jx-kBZ"/>
                     <constraint firstItem="CrH-Og-TDh" firstAttribute="top" secondItem="nYW-Hp-x7d" secondAttribute="bottom" constant="2" id="xPX-3s-8eL"/>
+                    <constraint firstItem="Obt-84-Gtd" firstAttribute="leading" secondItem="CrH-Og-TDh" secondAttribute="trailing" constant="8" id="zYD-cJ-KZS"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -128,4 +135,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="194.19642857142856"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="calendar" width="24" height="24"/>
+    </resources>
 </document>

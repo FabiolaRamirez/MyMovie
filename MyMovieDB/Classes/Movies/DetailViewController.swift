@@ -28,9 +28,14 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+    
+    func setup() {
         setData()
         tableView.register(UINib.init(nibName: "MovieDetailCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         self.detailMoviePresenter = DetailMoviePresenter(view: self)
+        tableView.backgroundColor = .lightGrayBackgroundColor
         if isItemForDeletingState {
             saveOrDeleteItem.title = "Delete".localized
             saveOrDeleteItem.tintColor = .red

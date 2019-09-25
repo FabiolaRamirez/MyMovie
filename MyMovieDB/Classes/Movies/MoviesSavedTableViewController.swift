@@ -31,8 +31,13 @@ class MoviesSavedTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setup()
+    }
+    
+    func setup() {
         loadMovies()
         self.tableView.reloadData()
+        tableView.backgroundColor = .lightGrayBackgroundColor
     }
     
     func loadMovies() {
