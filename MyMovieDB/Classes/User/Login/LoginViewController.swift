@@ -59,6 +59,8 @@ class LoginViewController: UIViewController {
     }
     
     func setupUI() {
+        emailTextfield.delegate = self
+        passwordTextfield.delegate = self
         view.backgroundColor = UIColor.orangePrimary
         titleLabel.font = UIFont.neueBold(27)
         titleLabel.textColor = .white
@@ -73,8 +75,23 @@ class LoginViewController: UIViewController {
         passwordTextfield.attributedPlaceholder = NSAttributedString(string: "Enter password".localized, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         emailTextfield.accessibilityIdentifier = AccessibilityContants.emailTextFieldId
         passwordTextfield.accessibilityIdentifier = AccessibilityContants.passwordTextField
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
+    @objc func dismissKeyboard() {
+        hideKeyboard()
+    }
+    
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        
+        return false
+    }
 }
 
 extension LoginViewController: LoginProtocol {

@@ -56,6 +56,8 @@ class SignUpViewController: UIViewController {
     }
     
     func setupUI() {
+        emailTextfield.delegate = self
+        passwordTextfield.delegate = self
         view.backgroundColor = UIColor.orangePrimary
         titleLabel.font = UIFont.neueBold(27)
         titleLabel.textColor = .white
@@ -79,10 +81,26 @@ class SignUpViewController: UIViewController {
         emailTextfield.accessibilityIdentifier = AccessibilityContants.emailSignUpTextFieldId
         passwordTextfield.accessibilityIdentifier = AccessibilityContants.passwordSignUpTextFieldId
         signupButton.accessibilityIdentifier = AccessibilityContants.signUpButtonId
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
     }
     
+    @objc func dismissKeyboard() {
+        hideKeyboard()
+    }
+    
 }
+
+extension SignUpViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        
+        return false
+    }
+}
+
 
 extension SignUpViewController: SignUpProtocol {
     
