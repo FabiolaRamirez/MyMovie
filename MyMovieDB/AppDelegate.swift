@@ -37,14 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func initialViewController() -> UIViewController {
-        if Auth.auth().currentUser == nil {
-            DispatchQueue.main.async {
-                return UIStoryboard(name: "User", bundle: nil).instantiateViewController(withIdentifier: "loginViewController")
-            }
-        } else if RDatabase.fetchMovies().count > 0 {
-            return UIStoryboard(name: "Movie", bundle: nil).instantiateViewController(withIdentifier: "moviesSavedTableViewController")
-        }
-        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeTableViewController")
+        return UIStoryboard(name: "Movie", bundle: nil).instantiateViewController(withIdentifier: "moviesSavedTableViewController")
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

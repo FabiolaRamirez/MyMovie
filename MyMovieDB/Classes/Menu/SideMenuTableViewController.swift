@@ -57,13 +57,8 @@ class SideMenuTableViewController: UIViewController {
     
     func showHome() {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
-        if RDatabase.fetchMovies().count > 0 {
-            let vc  = UIViewController.instantiateViewController(storyBoard: "Movie", identifier: "moviesSavedTableViewController") as! MoviesSavedTableViewController
-            navigationController?.pushViewController(vc, animated: false)
-        } else {
-            let vc  = UIViewController.instantiateViewController(storyBoard: "Main", identifier: "homeTableViewController") as! HomeTableViewController
-            navigationController?.pushViewController(vc, animated: false)
-        }
+        let vc  = UIViewController.instantiateViewController(storyBoard: "Movie", identifier: "moviesSavedTableViewController") as! MoviesSavedTableViewController
+        navigationController?.pushViewController(vc, animated: false)
     }
     
     func showAddMoreMovies() {
@@ -78,6 +73,7 @@ class SideMenuTableViewController: UIViewController {
         let action = UIAlertAction(title: "Yes".localized, style: .default) { (action2) in
             do {
                 try Auth.auth().signOut()
+                RDatabase.cleanAllData()
                 self.presentingViewController?.dismiss(animated: true, completion: nil)
             } catch let error {
                 self.showSimpleAlert(title: "", message: "ErrorLogoutMessage".localized)

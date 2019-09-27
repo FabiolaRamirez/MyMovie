@@ -47,4 +47,13 @@ class RDatabase {
         }
     }
     
+    static func cleanAllData() {
+        // Delete all objects from the realm
+        let realm = try! Realm()
+        try! realm.write {
+            realm.delete(realm.objects(Movie.self))
+        }
+    }
+
+    
 }

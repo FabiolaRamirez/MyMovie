@@ -25,7 +25,6 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        validateAuthentication()
         configMenu()
         settup()
     }

@@ -11,6 +11,7 @@ import Foundation
 protocol MoviesSavedPresenterDelegate {
     func deleteMovie(movie: Movie)
     func getMovies() -> [Movie]
+    func CleanAllData()
 }
 
 protocol MovieSavedProtocol: AnyObject {
@@ -33,6 +34,10 @@ class MoviesSavedPresenter: MoviesSavedPresenterDelegate {
     func getMovies() -> [Movie] {
         let movies = RDatabase.fetchMovies()
         return movies
+    }
+    
+    func CleanAllData() {
+        RDatabase.cleanAllData()
     }
 
 }

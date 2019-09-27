@@ -22,11 +22,27 @@ class MoviesSavedTableViewController: UITableViewController {
         self.navigationItem.title = "Home".localized
         settingMenu()
         self.moviesSavedPresenter = MoviesSavedPresenter(view: self)
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            self.setup()
+            self.validateAuthentication()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setup()
+        validateAuthentication()
+    }
+    
+    func validateAuthentication() {
+        if Auth.auth().currentUser == nil {
+            let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true, completion: nil)
+        } else if movies.isEmpty {
+            let vc  = UIViewController.instantiateViewController(storyBoard: "Main", identifier: "homeTableViewController") as! HomeTableViewController
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func setup() {
@@ -42,19 +58,20 @@ class MoviesSavedTableViewController: UITableViewController {
     @IBAction func searchMovies(_ sender: UIBarButtonItem) {
 
         let vc  = UIViewController.instantiateViewController(storyBoard: "Main", identifier: "homeTableViewController") as! HomeTableViewController
-        navigationController?.pushViewController(vc, animated: false)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - Validations
     
-    func validateAuthentication() {
-        if Auth.auth().currentUser == nil {
-            DispatchQueue.main.async {
-                let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
-                self.present(vc, animated: true, completion: nil)
-            }
-        }
-    }
+//    func validateAuthentication() {
+//        if Auth.auth().currentUser == nil {
+//            DispatchQueue.main.async {
+//                self.moviesSavedPresenter?.CleanAllData()
+//                let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
+//                self.present(vc, animated: true, completion: nil)
+//            }
+//        }
+//    }
     
     // MARK: - Menu Side
     
