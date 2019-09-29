@@ -1,5 +1,5 @@
 //
-//  HomePresenter.swift
+//  SearchMoviesPresenter.swift
 //  MyMovieDB
 //
 //  Created by Fabiola Ramirez on 9/3/19.
@@ -8,20 +8,20 @@
 
 import Foundation
 
-protocol HomePresenterDelegate {
+protocol SearchMoviesPresenterDelegate {
     func searchMovies()
 }
 
-protocol HomeProtocol: AnyObject {
+protocol SearchMoviesProtocol: AnyObject {
     func taskFinished()
     func updateUIWhenTaskstarts()
 }
 
-class HomePresenter: HomePresenterDelegate {
+class SearchMoviesPresenter: SearchMoviesPresenterDelegate {
     
-    weak var view: HomeProtocol?
+    weak var view: SearchMoviesProtocol?
     
-    init(view: HomeProtocol) {
+    init(view: SearchMoviesProtocol) {
         self.view = view
     }
     

@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
         if movies.isEmpty {
             self.navigationItem.title = "Search Movies".localized
             searchButton.isHidden(true)
-            let vc  = UIViewController.instantiateViewController(storyBoard: "Main", identifier: "homeTableViewController") as! HomeTableViewController
+            let vc  = UIViewController.instantiateViewController(storyBoard: "Main", identifier: "searchMoviesTableViewController") as! SearchMoviesTableViewController
             add(vc)
         } else {
             self.navigationItem.title = "Home".localized
@@ -58,7 +58,7 @@ class HomeViewController: UIViewController {
     func showAndHideViews() {
         self.navigationItem.title = "Search Movies".localized
         searchButton.isHidden(true)
-        let vc = UIViewController.instantiateViewController(storyBoard: "Main", identifier: "homeTableViewController") as! HomeTableViewController
+        let vc = UIViewController.instantiateViewController(storyBoard: "Main", identifier: "searchMoviesTableViewController") as! SearchMoviesTableViewController
         add(vc)
     }
 

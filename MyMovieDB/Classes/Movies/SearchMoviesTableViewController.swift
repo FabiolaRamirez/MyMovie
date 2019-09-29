@@ -1,5 +1,5 @@
 //
-//  HomeTableViewController.swift
+//  SearchMoviesTableViewController.swift
 //  MyMovieDB
 //
 //  Created by Fabiola Ramirez on 8/25/19.
@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import Crashlytics
 
-class HomeTableViewController: UITableViewController {
+class SearchMoviesTableViewController: UITableViewController {
     
     @IBOutlet weak var movieTextField1: UITextField!
     @IBOutlet weak var movieTextField2: UITextField!
@@ -20,7 +20,7 @@ class HomeTableViewController: UITableViewController {
     
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    var homePresenter: HomePresenterDelegate?
+    var searchMoviesPresenter: SearchMoviesPresenterDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,7 @@ class HomeTableViewController: UITableViewController {
         movieTextField5.delegate = self
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        self.homePresenter = HomePresenter(view: self)
+        self.searchMoviesPresenter = SearchMoviesPresenter(view: self)
         view.backgroundColor = .lightGrayBackgroundColor
         searchButton.setPrimaryTheme(title: "Search".localized)
     }
@@ -86,7 +86,7 @@ class HomeTableViewController: UITableViewController {
     }
     
     func searchMovies() {
-        homePresenter?.searchMovies()
+        searchMoviesPresenter?.searchMovies()
     }
     
     
@@ -111,7 +111,7 @@ class HomeTableViewController: UITableViewController {
 }
 
 
-extension HomeTableViewController: UITextFieldDelegate {
+extension SearchMoviesTableViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -120,7 +120,7 @@ extension HomeTableViewController: UITextFieldDelegate {
     }
 }
 
-extension HomeTableViewController: HomeProtocol {
+extension SearchMoviesTableViewController: SearchMoviesProtocol {
     
     func taskFinished() {
         self.activityIndicator.stopAnimating()

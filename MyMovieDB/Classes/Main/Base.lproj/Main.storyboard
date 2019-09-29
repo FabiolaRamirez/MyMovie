@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home Table View Controller-->
+        <!--Search Movies Table View Controller-->
         <scene sceneID="NRa-LR-Acu">
             <objects>
-                <tableViewController storyboardIdentifier="homeTableViewController" id="7IY-aT-xan" customClass="HomeTableViewController" customModule="MyMovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="searchMoviesTableViewController" id="7IY-aT-xan" customClass="SearchMoviesTableViewController" customModule="MyMovieDB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="4hZ-Y3-TLR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
