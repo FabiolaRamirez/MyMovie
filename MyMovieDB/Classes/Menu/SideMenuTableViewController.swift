@@ -67,8 +67,8 @@ class SideMenuTableViewController: UIViewController {
     }
     
     func showAddMoreMovies() {
-        let vc: AddMoviesViewController = UIViewController.instantiateViewController(storyBoard: "Movie", identifier: "addMoviesViewController") as! AddMoviesViewController
         self.presentingViewController?.dismiss(animated: true, completion: nil)
+        let vc: AddMoviesViewController = UIViewController.instantiateViewController(storyBoard: "Movie", identifier: "addMoviesViewController") as! AddMoviesViewController
         navigationController?.pushViewController(vc, animated: false)
     }
     

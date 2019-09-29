@@ -7,14 +7,17 @@
 //
 
 import Foundation
+import Firebase
 
 protocol MoviesSavedPresenterDelegate {
     func deleteMovie(movie: Movie)
     func getMovies() -> [Movie]
+    func validateAuthentication()
 }
 
 protocol MovieSavedProtocol: AnyObject {
     func successfullyMovieDeleted()
+    func validateAuthFinished()
 }
 
 class MoviesSavedPresenter: MoviesSavedPresenterDelegate {
@@ -33,6 +36,12 @@ class MoviesSavedPresenter: MoviesSavedPresenterDelegate {
     func getMovies() -> [Movie] {
         let movies = RDatabase.fetchMovies()
         return movies
+    }
+    
+    func validateAuthentication() {
+        if Auth.auth().currentUser == nil {
+            self.view?.validateAuthFinished()
+        }
     }
 
 }

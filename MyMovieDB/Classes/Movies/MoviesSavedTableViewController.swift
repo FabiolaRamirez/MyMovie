@@ -45,17 +45,6 @@ class MoviesSavedTableViewController: UITableViewController {
         navigationController?.pushViewController(vc, animated: false)
     }
     
-    // MARK: - Validations
-    
-    func validateAuthentication() {
-        if Auth.auth().currentUser == nil {
-            DispatchQueue.main.async {
-                let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
-                self.present(vc, animated: true, completion: nil)
-            }
-        }
-    }
-    
     // MARK: - Menu Side
     
     @IBAction func showMenu(_ sender: UIBarButtonItem) {
@@ -130,17 +119,21 @@ class MoviesSavedTableViewController: UITableViewController {
 extension MoviesSavedTableViewController: UISideMenuNavigationControllerDelegate {
     
     func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
-        validateAuthentication()
+        self.moviesSavedPresenter?.validateAuthentication()
     }
     
 }
 
 extension MoviesSavedTableViewController: MovieSavedProtocol {
+    
     func successfullyMovieDeleted() {
         print("successfully Deleted!")
     }
     
-    
+    func validateAuthFinished() {
+        let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
+        self.present(vc, animated: true, completion: nil)
+    }
 }
 
 

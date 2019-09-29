@@ -7,14 +7,17 @@
 //
 
 import Foundation
+import Firebase
 
 protocol AddMoviesPresenterDelegate {
     func searchMovies()
+    func validateAuthentication()
 }
 
 protocol AddMoviesProtocol: AnyObject {
     func taskFinished()
     func updateUIWhenTaskstarts()
+    func validateAuthFinished()
 }
 
 class AddMoviesPresenter: AddMoviesPresenterDelegate {
@@ -29,6 +32,15 @@ class AddMoviesPresenter: AddMoviesPresenterDelegate {
         view?.updateUIWhenTaskstarts()
         Service.shared.getMoviesOneSearch {
             self.view?.taskFinished()
+        }
+    }
+    
+    func validateAuthentication() {
+        if Auth.auth().currentUser == nil {
+            self.view?.validateAuthFinished()
+            print("entrando pot true")
+        } else {
+            print("entrando por falso")
         }
     }
     

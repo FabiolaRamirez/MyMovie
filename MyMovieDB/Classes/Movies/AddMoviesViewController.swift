@@ -35,17 +35,6 @@ class AddMoviesViewController: UIViewController {
         searchButton.setPrimaryTheme(title: "Search".localized)
         self.addMoviesPresenter = AddMoviesPresenter(view: self)
     }
-
-    // MARK: - Validations
-    
-    func validateAuthentication() {
-        if Auth.auth().currentUser == nil {
-            DispatchQueue.main.async {
-                let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
-                self.present(vc, animated: true, completion: nil)
-            }
-        }
-    }
     
     @IBAction func searchMovie(_ sender: UIButton) {
         verifyField()
@@ -84,7 +73,7 @@ class AddMoviesViewController: UIViewController {
 extension AddMoviesViewController: UISideMenuNavigationControllerDelegate {
     
     func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
-        validateAuthentication()
+        addMoviesPresenter?.validateAuthentication()
     }
     
 }
@@ -99,7 +88,7 @@ extension AddMoviesViewController: UITextFieldDelegate {
 }
 
 extension AddMoviesViewController: AddMoviesProtocol {
-    
+
     func taskFinished() {
         self.activityIndicator.stopAnimating()
         self.searchButton.isEnabled = true
@@ -111,6 +100,11 @@ extension AddMoviesViewController: AddMoviesProtocol {
     func updateUIWhenTaskstarts() {
         activityIndicator.startAnimating()
         searchButton.isEnabled = false
+    }
+    
+    func validateAuthFinished() {
+        let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
+        self.present(vc, animated: true, completion: nil)
     }
     
 }

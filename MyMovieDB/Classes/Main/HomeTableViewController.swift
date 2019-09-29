@@ -25,19 +25,9 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        validateAuthentication()
+        homePresenter?.validateAuthentication()
         configMenu()
         settup()
-    }
-    
-    func validateAuthentication() {
-        if Auth.auth().currentUser == nil {
-            DispatchQueue.main.async {
-                let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
-                vc.modalPresentationStyle = .overFullScreen
-                self.present(vc, animated: true, completion: nil)
-            }
-        }
     }
     
     func configMenu() {
@@ -134,7 +124,7 @@ class HomeTableViewController: UITableViewController {
 extension HomeTableViewController: UISideMenuNavigationControllerDelegate {
     
     func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
-        validateAuthentication()
+        homePresenter?.validateAuthentication()
     }
     
 }
@@ -160,6 +150,12 @@ extension HomeTableViewController: HomeProtocol {
     func updateUIWhenTaskstarts() {
         activityIndicator.startAnimating()
         searchButton.isEnabled = false
+    }
+    
+    func authenticationValidationFinished() {
+        let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
     }
     
 }

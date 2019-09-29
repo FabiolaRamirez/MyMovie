@@ -7,14 +7,17 @@
 //
 
 import Foundation
+import Firebase
 
 protocol HomePresenterDelegate {
     func searchMovies()
+    func validateAuthentication()
 }
 
 protocol HomeProtocol: AnyObject {
     func taskFinished()
     func updateUIWhenTaskstarts()
+    func authenticationValidationFinished()
 }
 
 class HomePresenter: HomePresenterDelegate {
@@ -29,6 +32,12 @@ class HomePresenter: HomePresenterDelegate {
         view?.updateUIWhenTaskstarts()
         Service.shared.searchMovies {
             self.view?.taskFinished()
+        }
+    }
+    
+    func validateAuthentication() {
+        if Auth.auth().currentUser == nil {
+            self.view?.authenticationValidationFinished()
         }
     }
     
