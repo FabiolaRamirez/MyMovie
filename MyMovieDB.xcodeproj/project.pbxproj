@@ -36,6 +36,8 @@
 		20C4FE5922F299DF001DEE73 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4FE5822F299DF001DEE73 /* SignUpPresenter.swift */; };
 		20CC5BCA23414929001B5A79 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CC5BC923414929001B5A79 /* HomeViewController.swift */; };
 		20CC5BCC23415686001B5A79 /* UIBarButtonItem+MyMovieDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CC5BCB23415686001B5A79 /* UIBarButtonItem+MyMovieDB.swift */; };
+		20CC5BCE234161F6001B5A79 /* SideMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CC5BCD234161F6001B5A79 /* SideMenuPresenter.swift */; };
+		20CC5BD023416917001B5A79 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CC5BCF23416917001B5A79 /* HomePresenter.swift */; };
 		20CE669E231B793A004611BB /* DetailMoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE669D231B793A004611BB /* DetailMoviePresenter.swift */; };
 		20CE66A0231B7BF5004611BB /* MoviesSavedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE669F231B7BF5004611BB /* MoviesSavedPresenter.swift */; };
 		9A20F60B22EA54E6005842B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A20F60A22EA54E6005842B8 /* Localizable.strings */; };
@@ -109,6 +111,8 @@
 		20C4FE5822F299DF001DEE73 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		20CC5BC923414929001B5A79 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		20CC5BCB23415686001B5A79 /* UIBarButtonItem+MyMovieDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+MyMovieDB.swift"; sourceTree = "<group>"; };
+		20CC5BCD234161F6001B5A79 /* SideMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuPresenter.swift; sourceTree = "<group>"; };
+		20CC5BCF23416917001B5A79 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		20CE669D231B793A004611BB /* DetailMoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMoviePresenter.swift; sourceTree = "<group>"; };
 		20CE669F231B7BF5004611BB /* MoviesSavedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesSavedPresenter.swift; sourceTree = "<group>"; };
 		2907065D15C65FBE3BB2AB5A /* Pods-MyMovieDBTests.stage-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMovieDBTests.stage-release.xcconfig"; path = "Pods/Target Support Files/Pods-MyMovieDBTests/Pods-MyMovieDBTests.stage-release.xcconfig"; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				204964CE22F4849500467465 /* SideMenuTableViewController.swift */,
+				20CC5BCD234161F6001B5A79 /* SideMenuPresenter.swift */,
 				204964D022F484A700467465 /* Menu.storyboard */,
 			);
 			path = Menu;
@@ -433,6 +438,7 @@
 			children = (
 				9AFEB8C622E126FD008DA556 /* Main.storyboard */,
 				20CC5BC923414929001B5A79 /* HomeViewController.swift */,
+				20CC5BCF23416917001B5A79 /* HomePresenter.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -731,6 +737,7 @@
 				208BD176230A0A88005B6F22 /* MovieDetailCell.swift in Sources */,
 				9ACE0B0322E79CD000B37167 /* UIColor+MyMovieDB.swift in Sources */,
 				20A5F35B22F9D49200D6AE5C /* MovieCollectionViewCell.swift in Sources */,
+				20CC5BD023416917001B5A79 /* HomePresenter.swift in Sources */,
 				9AFEB8C322E126FD008DA556 /* AppDelegate.swift in Sources */,
 				20A5F36122FA302200D6AE5C /* RecipeCollectionReusableView.swift in Sources */,
 				20A5F35E22F9D98B00D6AE5C /* Movie.swift in Sources */,
@@ -740,6 +747,7 @@
 				20CC5BCC23415686001B5A79 /* UIBarButtonItem+MyMovieDB.swift in Sources */,
 				9A5F6265230D9399005EF85F /* MoviesSavedTableViewController.swift in Sources */,
 				2022BF7522F64AA500CCAB73 /* UIViewController+MyMovieDB.swift in Sources */,
+				20CC5BCE234161F6001B5A79 /* SideMenuPresenter.swift in Sources */,
 				204964CF22F4849500467465 /* SideMenuTableViewController.swift in Sources */,
 				2022BF8022F77A3500CCAB73 /* String+MyMovieDB.swift in Sources */,
 				208FB3A12313419800F6E1F4 /* SearchMoviesTableViewController.swift in Sources */,

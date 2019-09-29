@@ -52,10 +52,10 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func searchMovies(_ sender: UIBarButtonItem) {
-        showAndHideViews()
+        searchMovie()
     }
     
-    func showAndHideViews() {
+    func searchMovie() {
         self.navigationItem.title = "Search Movies".localized
         searchButton.isHidden(true)
         let vc = UIViewController.instantiateViewController(storyBoard: "Main", identifier: "searchMoviesTableViewController") as! SearchMoviesTableViewController

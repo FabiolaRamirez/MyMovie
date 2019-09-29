@@ -16,6 +16,8 @@ class SideMenuTableViewController: UIViewController {
     private let menuCellIdentifier = "menuCellIdentifier"
     @IBOutlet weak var versionLabel: UILabel!
     
+    var sideMenuPresenter: SideMenuPresenterDelegate?
+    
     enum SideMenuOption: Int {
         case home = 0
         case addMoreMovies
@@ -43,6 +45,7 @@ class SideMenuTableViewController: UIViewController {
     }
     
     func settup() {
+        self.sideMenuPresenter = SideMenuPresenter(view: self)
         view.backgroundColor = .lightGrayBackgroundColor
         tableView.backgroundColor = .lightGrayBackgroundColor
         versionLabel.isHidden = true
@@ -70,20 +73,7 @@ class SideMenuTableViewController: UIViewController {
         
         let alert = UIAlertController(title: "Log Out".localized, message: "LogOutMessage".localized, preferredStyle: .alert)
         let action = UIAlertAction(title: "Yes".localized, style: .default) { (action2) in
-            do {
-                try Auth.auth().signOut()
-                RDatabase.cleanAllData()
-                ///self.presentingViewController?.dismiss(animated: true, completion: nil)
-                self.panel?.closeLeft()
-                
-                let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
-                vc.modalPresentationStyle = .overFullScreen
-                self.present(vc, animated: true, completion: nil)
-                
-            } catch let error {
-                self.showSimpleAlert(title: "", message: "ErrorLogoutMessage".localized)
-                print("Failed to sign out: \(error.localizedDescription)")
-            }
+            self.sideMenuPresenter?.logOut()
         }
         
         let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel) { (action) in }
@@ -133,6 +123,22 @@ extension SideMenuTableViewController: UITableViewDelegate, UITableViewDataSourc
         }
     }
     
+}
+
+
+extension SideMenuTableViewController: SideMenuProtocol {
+    
+    func logOutSuccessful() {
+        RDatabase.cleanAllData()
+        self.panel?.closeLeft()
+        let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    func logOutUnsuccessful(message: String) {
+        self.showSimpleAlert(title: "", message: message)
+    }
     
     
     
