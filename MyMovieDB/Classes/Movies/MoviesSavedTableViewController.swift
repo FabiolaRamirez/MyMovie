@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-import SideMenu
+import FAPanels
 
 class MoviesSavedTableViewController: UITableViewController {
 
@@ -19,75 +19,23 @@ class MoviesSavedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib.init(nibName: "MovieSavedCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        self.navigationItem.title = "Home".localized
-        settingMenu()
         self.moviesSavedPresenter = MoviesSavedPresenter(view: self)
-        Auth.auth().addStateDidChangeListener { (auth, user) in
-            self.setup()
-            self.validateAuthentication()
-        }
+        tableView.backgroundColor = .lightGrayBackgroundColor
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setup()
-        validateAuthentication()
-    }
-    
-    func validateAuthentication() {
-        if Auth.auth().currentUser == nil {
-            let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
-            vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true, completion: nil)
-        } else if movies.isEmpty {
-            let vc  = UIViewController.instantiateViewController(storyBoard: "Main", identifier: "homeTableViewController") as! HomeTableViewController
-            navigationController?.pushViewController(vc, animated: true)
-        }
     }
     
     func setup() {
         loadMovies()
         self.tableView.reloadData()
-        tableView.backgroundColor = .lightGrayBackgroundColor
     }
     
     func loadMovies() {
         movies = moviesSavedPresenter?.getMovies() ?? []
-    }
-    
-    @IBAction func searchMovies(_ sender: UIBarButtonItem) {
-
-        let vc  = UIViewController.instantiateViewController(storyBoard: "Main", identifier: "homeTableViewController") as! HomeTableViewController
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    // MARK: - Validations
-    
-//    func validateAuthentication() {
-//        if Auth.auth().currentUser == nil {
-//            DispatchQueue.main.async {
-//                self.moviesSavedPresenter?.CleanAllData()
-//                let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
-//                self.present(vc, animated: true, completion: nil)
-//            }
-//        }
-//    }
-    
-    // MARK: - Menu Side
-    
-    @IBAction func showMenu(_ sender: UIBarButtonItem) {
-        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
-    }
-    
-    func settingMenu() {
-        let vc: SideMenuTableViewController = UIViewController.instantiateViewController(storyBoard: "Menu", identifier: "sideMenuTableViewController") as! SideMenuTableViewController
-        let sideMenu = UISideMenuNavigationController(rootViewController: vc)
-        sideMenu.sideMenuDelegate = self
-        sideMenu.setNavigationBarHidden(true, animated: false)
-        SideMenuManager.defaultManager.menuLeftNavigationController = sideMenu
-        SideMenuManager.defaultManager.menuPresentMode = .menuSlideIn
-        SideMenuManager.defaultManager.menuWidth = 180
-        SideMenuManager.defaultManager.menuAnimationBackgroundColor = UIColor.lightGrayBackgroundColor
     }
 
     // MARK: - Table view data source
@@ -142,14 +90,6 @@ class MoviesSavedTableViewController: UITableViewController {
     }
     
 
-}
-
-extension MoviesSavedTableViewController: UISideMenuNavigationControllerDelegate {
-    
-    func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
-        validateAuthentication()
-    }
-    
 }
 
 extension MoviesSavedTableViewController: MovieSavedProtocol {

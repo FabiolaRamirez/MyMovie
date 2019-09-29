@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import RealmSwift
+import FAPanels
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,21 +24,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //realm
         let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
         Realm.Configuration.defaultConfiguration = config
-        //Navigation root
-        let bounds = UIScreen.main.bounds
-        self.window = UIWindow(frame: bounds)
-        let navigationController = UINavigationController(rootViewController: initialViewController())
-        window?.rootViewController = navigationController
-        self.window?.makeKeyAndVisible()
+        //tint app
         self.window?.tintColor = .orangePrimary
         //crashlytics
         Fabric.sharedSDK().debug = true
-        
+        //menu
+        setupMenu()
         return true
     }
     
-    private func initialViewController() -> UIViewController {
-        return UIStoryboard(name: "Movie", bundle: nil).instantiateViewController(withIdentifier: "moviesSavedTableViewController")
+    func setupMenu() {
+        //  Load the Controllers
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let menuStoryboard: UIStoryboard = UIStoryboard(name: "Menu", bundle: nil)
+        let leftMenuVC: SideMenuTableViewController = menuStoryboard.instantiateViewController(withIdentifier: "sideMenuTableViewController") as! SideMenuTableViewController
+
+        let centerVC: HomeViewController = mainStoryboard.instantiateViewController(withIdentifier: "homeViewController") as! HomeViewController
+        let centerNavVC = UINavigationController(rootViewController: centerVC)
+
+        let rootController = FAPanelController()
+        rootController.center(centerNavVC).left(leftMenuVC)
+        window?.rootViewController = rootController
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

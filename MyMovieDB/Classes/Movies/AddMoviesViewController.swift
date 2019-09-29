@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import SideMenu
 
 class AddMoviesViewController: UIViewController {
 
@@ -24,7 +23,7 @@ class AddMoviesViewController: UIViewController {
     
     
     @IBAction func showMenu(_ sender: UIBarButtonItem) {
-        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+        panel?.openLeft(animated: true)
     }
     
     func settup() {
@@ -34,17 +33,6 @@ class AddMoviesViewController: UIViewController {
         self.navigationItem.title = "Add More Movies".localized
         searchButton.setPrimaryTheme(title: "Search".localized)
         self.addMoviesPresenter = AddMoviesPresenter(view: self)
-    }
-
-    // MARK: - Validations
-    
-    func validateAuthentication() {
-        if Auth.auth().currentUser == nil {
-            DispatchQueue.main.async {
-                let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
-                self.present(vc, animated: true, completion: nil)
-            }
-        }
     }
     
     @IBAction func searchMovie(_ sender: UIButton) {
@@ -77,14 +65,6 @@ class AddMoviesViewController: UIViewController {
     
     @objc func dismissKeyboard() {
         hideKeyboard()
-    }
-    
-}
-
-extension AddMoviesViewController: UISideMenuNavigationControllerDelegate {
-    
-    func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
-        validateAuthentication()
     }
     
 }

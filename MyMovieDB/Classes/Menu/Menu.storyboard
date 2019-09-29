@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="965.21739130434787" y="183.42391304347828"/>
         </scene>
-        <!--Side Menu Navigation Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="kPk-fM-UrY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CBm-EV-sY1" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CBm-EV-sY1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="abd-c6-4zC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>

@@ -227,16 +227,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="fad-U6-uE0">
                         <barButtonItem key="backBarButtonItem" title="Home" id="shf-IX-oyL"/>
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="bAH-KV-nZK">
-                            <connections>
-                                <action selector="showMenu:" destination="Kcy-10-cxc" id="b33-WZ-FBL"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="t8H-zz-vsm">
-                            <connections>
-                                <action selector="searchMovies:" destination="Kcy-10-cxc" id="ExZ-n7-DFW"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>

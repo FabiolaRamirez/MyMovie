@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OIN-5S-KOG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a8I-gL-h3a">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -181,11 +182,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Aaa-om-Etd">
                         <barButtonItem key="backBarButtonItem" title="Home" id="pMI-8Q-GXx"/>
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="DcK-Z7-ctG">
-                            <connections>
-                                <action selector="showMenu:" destination="7IY-aT-xan" id="cF0-Ja-EVc"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="6Vt-WF-S7J" id="hZg-VN-AlR"/>
@@ -200,6 +196,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06g-7A-UFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="953.62318840579712" y="736.95652173913049"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="NKA-Pc-QaM">
+            <objects>
+                <viewController storyboardIdentifier="homeViewController" id="8Op-X4-xqC" customClass="HomeViewController" customModule="MyMovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pvd-2u-MiJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="t2g-eP-oam"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rt9-U8-GB9">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="0D3-ae-Ift">
+                            <connections>
+                                <action selector="showMenu:" destination="8Op-X4-xqC" id="H6D-5L-iGn"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="W6U-AF-22j">
+                            <connections>
+                                <action selector="searchMovies:" destination="8Op-X4-xqC" id="8rm-tZ-f1j"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="searchButton" destination="W6U-AF-22j" id="RCN-6m-obM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pF3-2C-Rcs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1799" y="735"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="pHZ-Lc-y7D">
+            <objects>
+                <viewController id="a8I-gL-h3a" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YiS-wQ-fka">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="VYq-n7-pyc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="as7-gk-iNd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2618" y="735"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="b51-Ln-gff">

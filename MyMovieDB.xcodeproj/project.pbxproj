@@ -34,6 +34,8 @@
 		20A5F36122FA302200D6AE5C /* RecipeCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A5F36022FA302200D6AE5C /* RecipeCollectionReusableView.swift */; };
 		20C4FE5622F28B2D001DEE73 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4FE5522F28B2D001DEE73 /* LoginPresenter.swift */; };
 		20C4FE5922F299DF001DEE73 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4FE5822F299DF001DEE73 /* SignUpPresenter.swift */; };
+		20CC5BCA23414929001B5A79 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CC5BC923414929001B5A79 /* HomeViewController.swift */; };
+		20CC5BCC23415686001B5A79 /* UIBarButtonItem+MyMovieDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CC5BCB23415686001B5A79 /* UIBarButtonItem+MyMovieDB.swift */; };
 		20CE669E231B793A004611BB /* DetailMoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE669D231B793A004611BB /* DetailMoviePresenter.swift */; };
 		20CE66A0231B7BF5004611BB /* MoviesSavedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE669F231B7BF5004611BB /* MoviesSavedPresenter.swift */; };
 		9A20F60B22EA54E6005842B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A20F60A22EA54E6005842B8 /* Localizable.strings */; };
@@ -105,6 +107,8 @@
 		20A5F36022FA302200D6AE5C /* RecipeCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionReusableView.swift; sourceTree = "<group>"; };
 		20C4FE5522F28B2D001DEE73 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		20C4FE5822F299DF001DEE73 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
+		20CC5BC923414929001B5A79 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		20CC5BCB23415686001B5A79 /* UIBarButtonItem+MyMovieDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+MyMovieDB.swift"; sourceTree = "<group>"; };
 		20CE669D231B793A004611BB /* DetailMoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMoviePresenter.swift; sourceTree = "<group>"; };
 		20CE669F231B7BF5004611BB /* MoviesSavedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesSavedPresenter.swift; sourceTree = "<group>"; };
 		2907065D15C65FBE3BB2AB5A /* Pods-MyMovieDBTests.stage-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMovieDBTests.stage-release.xcconfig"; path = "Pods/Target Support Files/Pods-MyMovieDBTests/Pods-MyMovieDBTests.stage-release.xcconfig"; sourceTree = "<group>"; };
@@ -355,6 +359,7 @@
 				9A20F60C22EA5ADB005842B8 /* UIButton+MyMovieDB.swift */,
 				2022BF7422F64AA500CCAB73 /* UIViewController+MyMovieDB.swift */,
 				2022BF7F22F77A3500CCAB73 /* String+MyMovieDB.swift */,
+				20CC5BCB23415686001B5A79 /* UIBarButtonItem+MyMovieDB.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -427,6 +432,7 @@
 				9AFEB8C622E126FD008DA556 /* Main.storyboard */,
 				208FB3A02313419800F6E1F4 /* HomeTableViewController.swift */,
 				9A715531231F1F2000031FB5 /* HomePresenter.swift */,
+				20CC5BC923414929001B5A79 /* HomeViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -638,12 +644,8 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
-			);
-			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
@@ -659,24 +661,24 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MyMovieDB/Pods-MyMovieDB-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FAPanels/FAPanels.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FAPanels.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -733,7 +735,9 @@
 				20A5F36122FA302200D6AE5C /* RecipeCollectionReusableView.swift in Sources */,
 				20A5F35E22F9D98B00D6AE5C /* Movie.swift in Sources */,
 				2022BF7C22F64D4800CCAB73 /* AddMoviesViewController.swift in Sources */,
+				20CC5BCA23414929001B5A79 /* HomeViewController.swift in Sources */,
 				20CE669E231B793A004611BB /* DetailMoviePresenter.swift in Sources */,
+				20CC5BCC23415686001B5A79 /* UIBarButtonItem+MyMovieDB.swift in Sources */,
 				9A5F6265230D9399005EF85F /* MoviesSavedTableViewController.swift in Sources */,
 				2022BF7522F64AA500CCAB73 /* UIViewController+MyMovieDB.swift in Sources */,
 				204964CF22F4849500467465 /* SideMenuTableViewController.swift in Sources */,

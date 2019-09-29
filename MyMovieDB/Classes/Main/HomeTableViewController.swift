@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import SideMenu
 import Crashlytics
 
 class HomeTableViewController: UITableViewController {
@@ -25,7 +24,6 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configMenu()
         settup()
     }
     
@@ -39,17 +37,6 @@ class HomeTableViewController: UITableViewController {
         }
     }
     
-    func configMenu() {
-        let vc: SideMenuTableViewController = UIViewController.instantiateViewController(storyBoard: "Menu", identifier: "sideMenuTableViewController") as! SideMenuTableViewController
-        let sideMenu = UISideMenuNavigationController(rootViewController: vc)
-        sideMenu.sideMenuDelegate = self
-        sideMenu.setNavigationBarHidden(true, animated: false)
-        SideMenuManager.defaultManager.menuLeftNavigationController = sideMenu
-        SideMenuManager.defaultManager.menuPresentMode = .menuSlideIn
-        SideMenuManager.defaultManager.menuWidth = 180
-        SideMenuManager.defaultManager.menuAnimationBackgroundColor = UIColor.lightGrayBackgroundColor
-    }
-    
     func settup() {
         movieTextField1.delegate = self
         movieTextField2.delegate = self
@@ -58,20 +45,13 @@ class HomeTableViewController: UITableViewController {
         movieTextField5.delegate = self
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        self.navigationItem.title = "Home".localized
         self.homePresenter = HomePresenter(view: self)
         view.backgroundColor = .lightGrayBackgroundColor
         searchButton.setPrimaryTheme(title: "Search".localized)
     }
     
     @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
         hideKeyboard()
-    }
-    
-    @IBAction func showMenu(_ sender: UIBarButtonItem) {
-        //Crashlytics.sharedInstance().crash()
-        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
     
     @IBAction func searchMovies(_ sender: UIButton) {
@@ -130,13 +110,6 @@ class HomeTableViewController: UITableViewController {
     }
 }
 
-extension HomeTableViewController: UISideMenuNavigationControllerDelegate {
-    
-    func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
-        validateAuthentication()
-    }
-    
-}
 
 extension HomeTableViewController: UITextFieldDelegate {
     

@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import Firebase
-import SideMenu
 
 class SideMenuTableViewController: UIViewController {
     
@@ -56,15 +55,15 @@ class SideMenuTableViewController: UIViewController {
     }
     
     func showHome() {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
-        let vc  = UIViewController.instantiateViewController(storyBoard: "Movie", identifier: "moviesSavedTableViewController") as! MoviesSavedTableViewController
-        navigationController?.pushViewController(vc, animated: false)
+        let vc  = UIViewController.instantiateViewController(storyBoard: "Main", identifier: "homeViewController") as! HomeViewController
+        let navigationController = UINavigationController(rootViewController: vc)
+        panel?.center(navigationController)
     }
     
     func showAddMoreMovies() {
         let vc: AddMoviesViewController = UIViewController.instantiateViewController(storyBoard: "Movie", identifier: "addMoviesViewController") as! AddMoviesViewController
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
-        navigationController?.pushViewController(vc, animated: false)
+        let navigationController = UINavigationController(rootViewController: vc)
+        panel?.center(navigationController)
     }
     
     func logout() {
@@ -74,7 +73,13 @@ class SideMenuTableViewController: UIViewController {
             do {
                 try Auth.auth().signOut()
                 RDatabase.cleanAllData()
-                self.presentingViewController?.dismiss(animated: true, completion: nil)
+                ///self.presentingViewController?.dismiss(animated: true, completion: nil)
+                self.panel?.closeLeft()
+                
+                let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true, completion: nil)
+                
             } catch let error {
                 self.showSimpleAlert(title: "", message: "ErrorLogoutMessage".localized)
                 print("Failed to sign out: \(error.localizedDescription)")
