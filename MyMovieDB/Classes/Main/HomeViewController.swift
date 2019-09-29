@@ -16,35 +16,17 @@ class HomeViewController: UIViewController {
     
     var movies: [Movie] = []
     
+    var homePresenter: HomePresenterDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.homePresenter = HomePresenter(view: self)
         initView()
-        Auth.auth().addStateDidChangeListener { (auth, user) in
-            self.initView()
-        }
+        homePresenter?.stateDidChangeListener()
     }
     
     func initView() {
-        guard let _ = Auth.auth().currentUser else {
-            let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
-            vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true, completion: nil)
-            return
-        }
-        
-        movies = RDatabase.fetchMovies()
-        if movies.isEmpty {
-            self.navigationItem.title = "Search Movies".localized
-            searchButton.isHidden(true)
-            let vc  = UIViewController.instantiateViewController(storyBoard: "Main", identifier: "searchMoviesTableViewController") as! SearchMoviesTableViewController
-            add(vc)
-        } else {
-            self.navigationItem.title = "Home".localized
-            searchButton.isHidden(false)
-            let vc = UIViewController.instantiateViewController(storyBoard: "Movie", identifier: "moviesSavedTableViewController") as! MoviesSavedTableViewController
-            add(vc)
-        }
+        homePresenter?.verifyIfUserIsAuth()
     }
     
     @IBAction func showMenu(_ sender: UIBarButtonItem) {
@@ -62,4 +44,36 @@ class HomeViewController: UIViewController {
         add(vc)
     }
 
+}
+
+extension HomeViewController: HomeProtocol {
+    
+    func userIsAuth() {
+        homePresenter?.verifyListOfMovies()
+    }
+    
+    func userNoAuth() {
+        let vc: LoginViewController = UIViewController.instantiateViewController(storyBoard: "User", identifier: "loginViewController") as! LoginViewController
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    func refreshViews() {
+         self.initView()
+    }
+    
+    func listOfMoviesIsEmpty() {
+        self.navigationItem.title = "Search Movies".localized
+        searchButton.isHidden(true)
+        let vc  = UIViewController.instantiateViewController(storyBoard: "Main", identifier: "searchMoviesTableViewController") as! SearchMoviesTableViewController
+        add(vc)
+    }
+    
+    func listOfMoviesNoEmpty() {
+        self.navigationItem.title = "Home".localized
+        searchButton.isHidden(false)
+        let vc = UIViewController.instantiateViewController(storyBoard: "Movie", identifier: "moviesSavedTableViewController") as! MoviesSavedTableViewController
+        add(vc)
+    }
+    
 }
