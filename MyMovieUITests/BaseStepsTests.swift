@@ -20,7 +20,7 @@ class BaseStepsTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         super.setUp()
         // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = true
+        continueAfterFailure = false
 
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         app = XCUIApplication()
@@ -132,7 +132,7 @@ class BaseStepsTests: XCTestCase {
     //MARK:- Validation
     
     func validateHomeScreen() {
-        let menuButton = app.navigationBars["Home"].buttons["Menu"]
+        let menuButton = app.navigationBars["Search Movies"].otherElements["Search Movies"]
         expectation(for: exists, evaluatedWith: menuButton, handler: nil)
         waitForExpectations(timeout: 30, handler: nil)
         XCTAssert(menuButton.exists, "Unable to see Home screen!")

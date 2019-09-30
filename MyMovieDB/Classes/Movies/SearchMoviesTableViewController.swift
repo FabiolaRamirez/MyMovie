@@ -24,7 +24,7 @@ class SearchMoviesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        settup()
+        setup()
     }
     
     func validateAuthentication() {
@@ -37,7 +37,7 @@ class SearchMoviesTableViewController: UITableViewController {
         }
     }
     
-    func settup() {
+    func setup() {
         movieTextField1.delegate = self
         movieTextField2.delegate = self
         movieTextField3.delegate = self
